@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>demo02.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    function getXhr(){
+    	var xhr = null;
+    	if(window.XMLHttpRequest){
+    		xhr = new XMLHttpRequest();
+    	} else {
+    		xhr = new ActiveXObjrct("microsoft.XMLHttp");
+    	}
+    	return xhr;
+    }
+    function loadCities(){
+    	var xhr = getXhr();
+    	xhr.open("get","cities.do",true);
+    	xhr.send(null);
+    	xhr.onreadystatechange=function(){
+    		if(xhr.readyState==4&&xhr.status==200){
+    			var str = xhr.responseText;
+    			//转换为JSON对象
+    			var cities = JSON.parse(str);
+    			//循环遍历
+    			for(var i=0;i<cities.length;i++){
+    				var id = cities[i].id;
+    				var name = cities[i].name;
+    				//生成option
+    				var opt = new Option(name,id);
+    				//添加到option
+    				document.getElementById("s1").options[i]=opt;
+    			}
+    		}
+    	}
+    }
+    </script>
+  </head>
+  
+  <body onload="loadCities();">
+  城市：<select id="s1"></select>
+  <hr/>
+  <table border="1px" width="40%" cellspance=0>
+  <tr>
+  <th>编号</th>
+  <th>城市</th>
+  </tr>
+  <tr>
+  
+  </tr>
+  </table>
+  </body>
+</html>
