@@ -1,0 +1,14 @@
+#JSON简介
+全称：JavaScript OBject Notation
+ JavaScript对象格式
+ JSOn对象类型格式
+  {"key":"value1","key":"value"}
+  
+  java将对象转换为JSON字符串
+  -利用JSON-lib工具包（Servlet）
+   JSONObject/JSONArray
+  -MVC框架封装（Springmvc,strucs2）
+  
+  练习
+  cities.do-->CitySerlet
+  -->[{"id":101,"name":"北京"},{"id":102,"name":"上海"},{"id":103,"name":"深圳"}]

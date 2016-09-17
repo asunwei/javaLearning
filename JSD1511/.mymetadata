@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="JSD1511"
+  id="myeclipse.1461077108242"
+  context-root="/JSD1511"
+  j2ee-spec="1.4"
+  archive="JSD1511.war">
+  <attributes>
+    <attribute name="webrootdir" value="&lt;prjroot&gt;" />
+  </attributes>
+</project-module>
+

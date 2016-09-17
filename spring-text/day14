@@ -1,0 +1,30 @@
+笔记列表显示
+用户点击笔记本选项时，显示笔记本下的笔记列表
+##发送Ajax请求
+时机：li单击
+提交数据：笔记本ID
+地址：/note/loadnotes.do
+##服务器处理
+/note/loadnotes.do
+-->LoadNotesController.execute
+-->NoteService.loadBookNotes
+-->NoteDao.findByBookId
+-->cn_note（查询）
+-->返回Json结果
+
+
+##笔记内容显示
+用户点击某个笔记，将内容显示到笔记区
+##发送Ajax请求
+ 时机：笔记li单击
+ 提交参数：笔记ID
+ 地址：/note/load.do
+ ##服务器端处理
+ /note/load.do
+ -->LoadNoteController.execute
+ -->NoteService.loadNote
+ -->NoteDao.findByID
+ -->cn_note(查询)
+ -->返回JSON结果
+ ##Ajax回调处理
+ 解析JSon结果，将笔记标题内容显示出来

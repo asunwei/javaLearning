@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>列表样式</title>
+    <style>
+     /*修改有序列表前的图标*/
+     ol{
+      list-style-type:upper-roman;
+     }
+     /*修改无序列表前的图标*/
+     ul{
+      list-style-type:square;
+     }
+     /*自定义图标*/
+     .add{
+      list-style-image:url(../images/add.png);
+     }
+    </style>
+  </head>
+  <body>
+    <ol>
+    <li>浙江省</li>
+    <li class="add">江苏省</li>
+    <li>山东省</li>
+    </ol>
+    <ul>
+    <li>北京</li>
+    <li class="add">上海</li>
+    <li>广州</li>
+    </ul>
+  </body>
+</html>

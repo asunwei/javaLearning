@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>发送消息</title>
+    <style>
+      #meg{
+      width:150px;
+      height:30px;
+      line-height:30px;
+      border:1px solid red;
+      font-size:20px;
+      }
+    </style>
+    <script>
+     var id = null; 
+     function send(){
+    	 if(id){
+    		 return;
+    	 }
+    	 //显示正在发送。
+    	var p=document.getElementById("meg");
+    	 p.innerHTML = "正在发送...";
+    	 //启动定时器，推迟2秒，修改提示信息
+    	 id = setTimeout(function(){
+    	   //显示发送成功
+    	   p.innerHTML = "发送成功";
+    	   id = null;
+    	 },2000);
+     }
+     function cancel(){
+    	 if(id){
+    	 clearTimeout(id);
+    		 id = null;
+    		 var p =document.getElementById("meg");
+    		 p.innerHTML = "取消发送";
+    	 }
+     }
+    </script>
+  </head>
+  <body>
+    <p>
+     <input type="button" value="发送" onclick="send();"/>
+     <input type="button" value="取消" onclick="cancel();"/>
+    </p>
+    <p id="meg"></p>
+  </body>
+</html>

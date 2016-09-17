@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>display</title>
+    <style>
+    /*将块改为行内元素*/
+    p{
+      display:inline;
+    }
+    /*将行内改为块*/
+    span{
+      display:block;
+    }
+    /*将行内块改为块*/
+    img{
+    display:block;
+    }
+    /*隐藏*/
+    div{
+    display:none;
+    }
+    </style>
+  </head>
+  <body>
+   <!-- 块元素 -->
+    <div>
+     <p>aaa</p>
+     <p>bbb</p>
+     <p>ccc</p>
+    </div>
+    <!-- 行内元素 -->
+    <div>
+     <span>aaa</span>
+     <span>bbb</span>
+     <span>ccc</span>
+    </div>
+    <!-- 行内块 -->
+    <div>
+    <img src="../images/01.jpg"/>
+    <img src="../images/02.jpg"/>
+    <img src="../images/03.jpg"/>
+    </div>
+  </body>
+</html>

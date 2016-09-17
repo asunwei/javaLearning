@@ -1,0 +1,159 @@
+王克晶(WKJ)
+phone: 13581726261
+qq: 1945019382
+email: wangkj@tedu.cn
+
+碰到问题:
+1.同桌
+2.项目经理
+3.讲师
+
+当日事当日毕
+
+会
+熟练
+
+小要求:
+1.课堂气氛活跃一些
+
+窍门:
+2.多想、多练
+
+计算机分类：
+1.pc机：个人电脑
+2.服务器：处理大数据请求的高性能计算机
+3.智能终端：手机、ipad、可视电话...
+4.嵌入式设备：除了上面3种以外的带cpu的
+Windows系统----PC机
+Linux系统------服务器、智能终端、嵌入式设备
+
+
+java主要是用于服务器端的开发
+
+
+Linux系统-----需要装游戏吗?
+              需要装Office办公软件吗?
+
+windows系统---pc机
+linux系统---服务器、智能终端、嵌入式设备
+
+linux系统---需要快速操作速度
+                               命令操作最快
+linux分两种
+1.带图形界面的
+2.不带图形界面的--通过命令实现
+                              
+当前工作目录/a/b
+绝对路径（根，以"/"开头）：cd /c/d--------/c/d
+相对路径（当前目录）：cd c/d---------/a/b/c/d
+"."表示当前目录
+".."表示上一级目录                
+
+笔记:
+1.Linux:
+  1)开源的操作系统、免费
+    主要是服务器端操作系统，
+    java主要是服务器端开发，所以必须会Linux
+  2)Linux与Windows目录结构的区别:
+    2.1)文件系统不同:
+        Linux:目录  Windows:盘符
+    2.2)外部设备映射不同:
+        Linux:挂载点 Windows:盘符
+    2.3)安全级别不同:
+        Linux:高 Windows:低
+  3)Linux常用命令:
+    3.1)pwd:显示当前工作目录
+    3.2)ls:查看当前工作目录的内容
+    3.3)cd:改变当前工作目录
+  4)绝对路径:相对于根目录的位置，以/开头
+             cd /a/b
+    相对路径:相对于当前目录的位置
+             cd a/b
+	     cd ..:返回上一级目录
+2.java开发环境:
+  1)java编译运行过程:
+      .java源文件，经过编译，生成.class字节码文件
+      JVM加载.class并运行.class
+    --------跨平台，一次编程到处使用
+  2)JVM:java虚拟机
+        加载.class并运行.class
+    JRE:java运行环境
+        除了包含JVM以外还包含运行java程序所必须的环境
+        JRE=JVM+java系统类库
+    JDK:java开发工具包
+        除了包含JRE以外还包含开发java程序所必须的命令工具
+	JDK=JRE+编译、运行等工具
+    运行java程序的最小环境是JRE
+    开发java程序的最小环境是JDK
+  3)配置环境变量:-----了解
+    3.1)JAVA_HOME:指向jdk的安装目录
+    3.2)CLASSPATH:表示类的搜索路径，
+                  一般简写为.
+    3.3)PATH:指向jdk下的bin目录
+             javac,java...都在bin目录下    
+3.eclipse开发java程序
+
+1)新建java项目/工程-------小区
+2)新建包------------------楼号+单元号
+3)新建类------------------房间
+
+
+JSD1511
+day01
+HelloWorld
+
+workspace:工作空间
+          所有java最终都会保存在workspace中
+
+/home/soft01/workspace
+
+
+1.不用工具
+2.用工具
+
+jdk,eclipse
+
+必须先装jdk，再运行eclipse
+
+ibm使用java语言做了eclipse
+让别人用eclipse写java代码
+
+
+/a/b;/c/d;/e/f;...
+javac
+
+javac命令
+java命令
+
+为了装不同的JVM
+JDK=JVM+java系统类库+编译、运行等工具
+
+不同操作系统的指令是不同的
+Windows:
+  你:01010101
+Linux:
+  你:10101010
+IOS:
+  你:11110000
+
+C语言编译运行过程:
+  .c程序----编译----可执行程序(0和1)
+
+QQ:C语言写的
+  Windows版QQ--------运行在Windows系统上
+  Linux版QQ----------运行在Linux系统上
+  IOS版QQ------------运行在IOS系统上
+
+java语言编译运行过程:
+  .java程序----编译----.class字节码文件
+  JVM加载.class并运行.class(0和1)
+
+不同操作系统有不同的jvm
+
+QQ:Java语言写的
+  .java的QQ，经过编译，生成.class字节码文件
+    Windows的JVM------运行在Windows上
+    Linux的JVM--------运行在Linux上
+    IOS的JVM----------运行在IOS上
+
+跨平台，一次编程到处使用

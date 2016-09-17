@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  <servlet-class>web.DemoServlet</servlet-class>
+  <servlet-name>demo</servlet-name>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>demo</servlet-name>
+  <url-pattern>/demo</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 配置Filter -->
+  <!-- filter-mapping的顺序
+  决定了多个Filterd调用顺序 -->
+  <filter>
+  <filter-class>web.FirstFilter</filter-class>
+  <filter-name>first</filter-name>
+  <!-- 初始化参数 -->
+  <init-param>
+  <param-name>city</param-name>
+  <param-value>北京</param-value>
+  </init-param>
+  </filter>
+  <filter-mapping>
+  <filter-name>first</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+  <filter-class>web.SecondFilter</filter-class>
+  <filter-name>second</filter-name>
+  </filter>
+  <filter-mapping>
+  <filter-name>second</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- 配置listener -->
+  <listener>
+  <listener-class>web.MeListener</listener-class>
+  </listener>
+</web-app>

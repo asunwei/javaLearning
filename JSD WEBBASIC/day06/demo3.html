@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>登录</title>
+    <style>
+    .ok{
+      color:green;
+      border:1px solid green;
+    }
+    .error{
+     color:red;
+     border:1px solid red;
+    }
+    </style>
+    <script>
+    //如何修改元素的样式
+    //1.在CSS中使用类选择器预置样式
+    //2.通过js修改元素的class属性，给这个元素增加预置样式 ,元素.className="样式"
+    //className就是元素的class属性
+    //校验账号
+    function check_name(){
+    	//1.获取帐号值
+    	var user_name=document.getElementById("user_name").value;
+    	//2.校验格式
+        var span=document.getElementById("user_mes");
+    	var reg=/^\w{6,12}$/;
+    	if(reg.test(user_name)){
+    		//匹配成功
+    		span.className="ok";
+    		return true;
+    	} else{
+    		//匹配失败
+    		span.className="error";
+    		return false;
+    	}
+    }
+       	function check_pwd(){
+    		var pwd=document.getElementById("pwd").value;
+    		var span=document.getElementById("pwd_mes");
+    		var reg=/^\w{8,20}$/;
+    		if(reg.test(pwd)){
+    			span.className="ok";
+    			return true;
+    		} else{
+    			span.className="error";
+    			return false;
+    		}
+    	}
+    </script>
+  </head>
+  <body>
+    <form action="http://tmooc.cn" onsubmit="return check_name()+check_pwd()==2;">
+    帐号：<p>
+       <input type="text" id="user_name" onblur="check_name();"/>
+       <span id="user_mes">6-12位字母、数字、下划线组合</span>    
+       </p>
+    密码：<p>
+       <input type="password" id="pwd" onblur="check_pwd();"/>
+       <span id="pwd_mes" >8-20位字母、数字、下划线组合</span>
+       </p>
+       <p>
+       <input type="submit" value="登录"/>
+       </p>
+    
+    </form>
+  </body>
+</html>

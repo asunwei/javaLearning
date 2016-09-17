@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="springmvc-bmi"
+  id="myeclipse.1456991009324"
+  context-root="/springmvc-bmi"
+  j2ee-spec="5.0"
+  archive="springmvc-bmi.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

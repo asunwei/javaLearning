@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>window常用属性</title>
+    <script>
+     //1.location:用来操作浏览器的地址栏
+     function f1(){
+    	var b = confirm("确定跳转吗？")
+    	if(b){
+      location.href="http://www.tmooc.cn";
+    	}
+     }
+    function f2(){
+    	location.reload();
+    }
+     //2.history:用来操作浏览器历史记录
+     //history.back():后退
+    //history.forward():前进
+    //history.go(n);n>0 表示前进n步，n<0 表示后退n步
+    
+    //3.screen:用来操作屏幕
+    console.log(screen.width);
+    console.log(screen.height);
+    console.log(screen.availWidth);
+    console.log(screen.availHeight);
+    
+    //4.navigator:获取浏览器基本信息
+    console.log(navigator.userAgent);
+    </script>
+  </head>
+  <body>
+    <h1>Window的常用属性</h1>
+    <p>1.document</p>
+    <p>2.location</p>
+    <p>3.history</p>
+    <p>4.screen</p>
+    <p>5.navigator</p>
+    <input type="button" value="TMOOC" onclick="f1();"/>
+    <input type="button" value="刷新" onclick="f2();"/>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>简单计算器</title>
+    <script>
+      function cal(){
+    	  //1.从文本框中取值
+    	  var input = document.getElementById("screen");
+    	  var val = input.value;
+    	  //2.执行此算式
+    	  try{
+    		  var result = eval(val)
+    		  //执行正确，写入结果
+    		  input.value = result;
+    	  } catch(e) {
+    		  console.log(e);
+    		  console.log(typeof(e));
+    		  //算式有误给提示
+    		  input.value = "Error";
+    	  }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="screen"/>
+    <input type="button" value="=" onclick="cal();" />
+  </body>
+</html>

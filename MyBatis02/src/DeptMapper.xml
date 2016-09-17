@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.DeptMapper">
+    !-- id 是方法名，resultType是返回值中对象的类型，如：List<Admin> -->
+    <select id="findAll" resultType="cn.tedu.entity.Dept">
+       select deptNo,dname,loc from Dept_swei
+    </select>
+   <!-- 增加操作 -->
+    <insert id="addDept" parameterType="cn.tedu.entity.Dept">
+    insert into dept_swei (deptNo,dname,loc) values (#{deptNo},#{dname},#{loc})
+    </insert>
+    <!-- 删除操作 -->
+    <delete id="deleteDept" parameterType="cn.tedu.entity.Dept">
+    delete from dept_swei where deptno=#{deptNo}
+    </delete>
+    <!-- 根据id查找 -->
+    <select id="findDeptById" resultType="cn.tedu.entity.Dept" parameterType="java.lang.Integer">
+    select deptNo,dname,loc from Dept_swei where deptNo=#{deptNo}
+    </select>
+    <!-- 更新操作 -->
+    <update id="updateDept" parameterType="cn.tedu.entity.Dept" >
+    update dept_swei set dname=#{dname},loc=#{loc} where deptNo=#{deptNo}
+    </update>
+   <!-- 查询，以map形式返回 -->
+    <select id="findDeptAll" resultType="java.util.Map">
+    select dname as "dname",loc as "loc" from dept_swei
+    </select>
+</mapper>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>照片堆叠</title>
+    <style>
+      /*先画桌子*/
+      div{
+      width:800px;
+      height:500px;
+      background-color:#088;
+      margin:30px auto;
+      position:relative;
+      }
+      /*让照片堆叠在一起*/
+      img{
+      position:absolute;
+      }
+      #i1{
+      left:100px;
+      top:100px;
+      }
+      #i2{
+      left:200px;
+      top:50px;
+      }
+      #i3{
+      left:130px;
+      bottom:100px;
+      }
+      img:hover{
+      /*设置堆叠顺序*/
+      z-index:999;
+      }
+    </style>
+  </head>
+  <body>
+   <!-- 桌子 -->    
+   <div>
+   <!-- 照片 -->
+   <img src="../images/1.jpg" id="i1"/>
+   <img src="../images/2.jpg" id="i2"/>
+   <img src="../images/3.jpg" id="i3"/>
+   </div>
+  </body>
+</html>

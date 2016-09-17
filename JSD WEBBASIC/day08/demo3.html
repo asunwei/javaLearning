@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>DOM增删</title>
+  </head>
+  <body>
+    <ul id="cities">
+     <li>北京</li>
+     <li id="sh">上海</li>
+     <li id="gz">广州</li>
+     <li>深圳</li>
+    </ul>
+    <script>
+    //1.追加元素节点
+    var li1 = document.createElement("li");
+    li1.innerHTML = "天津";
+    var ul = document.getElementById("cities");
+    ul.appendChild(li1);
+    
+    //2.插入元素节点
+    var li2 = document.createElement("li");
+    li2.innerHTML = "重庆";
+    var sh = document.getElementById("sh");
+    ul.insertBefore(li2,sh);
+    
+    //3.删除元素节点
+    var gz = document.getElementById("gz");
+    //ul.removeChild(gz);
+    gz.remove();
+    
+    </script>
+    
+  </body>
+</html>

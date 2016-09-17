@@ -1,0 +1,77 @@
+jQuery+SpringMVC+JSON（Spting配套的jackson包）
+springmvc发出的json数据而不是jsp
+
+#SpringMVC的JSON响应
+
+原始流程
+请求-->DispatcherServlet-->依据HandlerMapping-->Controller(调用service.dao)
+-->返回ModelAndView或者String-->ViewResolver-->JSP
+
+修改后
+请求-->DispatcherServlet-->依据HandlerMapping-->Controller(调用service.dao)
+-->返回各种数据类型（要返回的数据类型）
+-->调用jackson包将数据转换成json字符输出流（引入jackson包，使用@ResponseBody）
+
+案例
+/city/load.do
+-->DispacherServlet
+   <web.xml>配置 启动ApplicationContext对象
+-->HandlerMapping
+   <spring-mvc.xml>配置
+-->loadCityController.excute()
+(纳入spring-mvc.xml;@RequestMpping)
+-->返回City对象，调用jackson转换JSON输出
+（引入jackson包，使用@ResponseBody）
+
+
+#项目简介（云笔记管理系统）
+##功能
+笔记本管理，笔记管理，回收站管理，
+分享和收藏管理，活动管理，用户管理等
+
+##采用的技术
+HTML+Ajax    -->(JSP+jstl+el)
+spring(IOC/AOP/MVC)
+springMVC+Spring(IOC/AOP)+MyBatis
+MaBatis(访问MySQL数据库)
+
+所有的界面采用HTML静态页面
+所有的请求采用Ajax方式交互
+所有的请求返回的JSON结果，统一返回下面的结果
+{
+"status":状态
+“msg":消息
+"data":数据
+}
+##构建数据库环境
+ER模型图：实体关系模型图
+MySQl:库-->表-->记录
+show databases;//查看有哪些库
+use test;//使用test库
+show tables;//查看当前库表
+
+create table emp_swei(
+eno int primary key,
+ename varchar(20)
+);
+desc enm_swei;//查看表结构
+
+insert into emp_swei(eno,ename)
+values(1,'tom');
+
+sql文件导入
+set names utf8;//设置客户端编码
+source D:\\cloud_note.sql;//导入sql文件
+drop table xxx;//删除表
+drop database;//删除库
+
+##创建项目工程
+-工程名：cloudnote
+-WebRoot放置html/scripts/css/image...
+-导入sprig+mabatis的jar包
+-导入配置文件
+spring-mvc.xml:Spring-mvc配置信息
+spring-mabatis.xml:MyBatis配置信息
+spring-bean.xml:其他bean组件的配置信息
+-
+

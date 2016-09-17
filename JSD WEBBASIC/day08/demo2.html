@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>图片轮播</title>
+    <style>
+    .show{
+      display:block;
+    }
+    .hide{
+      display:none;
+    }
+    ul{
+     width:480px;
+     height:360px;
+     border:1px solid red;
+     list-style-type:none;
+     padding:0;
+     margin:50px auto;
+    }
+    </style>
+    <script>
+    var id=null;
+    //轮播的次数,作为全局变量，是为了在多次调用lunbo()时，可以连续
+    var index = 0;
+    //轮播
+      function lunbo(){
+    	//启动定时器
+    	id = setInterval(function(){
+    		  index++;
+    		  //1.将所有的li隐藏
+    		  var lis = document.getElementsByTagName("li");
+    		  for(var i=0; i<lis.length;i++){
+    			  lis[i].className = "hide";
+    		  }
+    		  //2.将下一个li显示
+    		  var n = index%lis.length;
+    		  lis[n].className = "show";
+    	  },1000);
+      }
+        function stop(){
+    		clearInterval(id);	
+    	}
+    //轮播方法需要在页面加载后使用
+    //1.在body最后写js，调用lunbo()
+    //2.在页面加载事件（onload）中调用，该事件在页面加载后自动触发。
+    
+    //该事件定义方式：
+    //1）.在body元素上写onload="lunbo()"
+    //2）.通过js定义此事件并绑定函数
+    window.onload = lunbo();
+    
+    </script>
+  </head>
+  <body>
+  <!-- onmouseover:鼠标进入事件
+       onmouseout:鼠标离开事件
+   -->
+    <ul onmouseover="stop();"
+	    onmouseout="lunbo();">
+      <li class="show">
+       <img src="../images/f1.jpg"/>
+      </li>
+      <li  class="hide">
+       <img src="../images/f2.jpg"/>
+      </li>
+      <li class="hide">
+       <img src="../images/f3.jpg"/>
+      </li>
+      <li class="hide">
+       <img src="../images/f4.jpg"/>
+      </li>
+    </ul>
+  </body>
+</html>

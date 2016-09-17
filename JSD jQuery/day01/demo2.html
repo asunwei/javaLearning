@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>jQuery</title>
+    <script src="../js/jquery-1.11.1.js"></script>
+    <script>
+     function f1(){
+    	 //通过选择器选中的目标是jQuery对象
+    	 var $ps = $("p");
+    	 for(var i=0;i<$ps.length;i++){
+    		 //从数组中获取的对象就是DOM对象
+    		 var p = $ps[i];//$ps.get(i)
+    		 alert(p.innerHTML);
+    	 }
+     }
+     //点击的次数
+     var index=0;
+     //奇数时变大，偶数时变小
+     //传入的this是DOM对象
+     function f2(img){
+    	 index++;
+    	 //将DOM转换jQuery才能调用jquery方法
+    	 if(index%2==0){
+    		 //偶数变小（218*218
+    		 $(img).width("218px").height("218px");
+    	 } else {
+    		 //奇数变大（300*300)
+    		 $(img).width("300px").height("300px");
+    	 }
+     }
+    </script>
+  </head>
+  <body>
+    <input type="button" value="打印" onclick="f1();"/>
+    <p>jQuery对象</p>
+    <p>本质就是DOM数组</p>
+    <p>她是jQuery封装的对象</p>
+    <p>通过选择器得到对象就是jQuery对象</p>
+    <p>jQuery可以调用jQuery方法</p>
+    <div>
+     <img src="../images/01.jpg" onclick="f2(this);"/>
+    </div>
+  </body>
+</html>

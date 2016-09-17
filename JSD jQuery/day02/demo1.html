@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>选择器</title>
+    <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+    <script>
+     //页面加载后，用选择器选择节点
+     //便签名一样的弟弟，可以直接添加"+"
+     window.onload = function(){
+    	 //选择下一个弟弟
+    	 //*层次选择器
+    	 console.log($("#sh+"));
+    	 //*基本过滤选择器
+    	 //选择首行
+    	 console.log($("table tr:first"));
+    	 //选择奇数行
+    	 console.log($("table tr:even"));
+    	 //选择下标小于3的行
+    	 console.log($("table tr:lt(3)"));
+    	 //选择下标等于2的行
+    	 console.log($("table tr:eq(2)"));
+    	 //下标不为2的行
+    	 console.log($("table tr:not(table tr:eq(2))"));
+    	 //内容过滤选择器
+    	 console.log($("p:contains('病')"));
+    	 console.log($("p:empty"));
+    	 //可见性过滤选择器
+    	 console.log($("p:hidden"));
+    	 //属性过滤器
+    	 console.log($("input[value!='按钮']"));
+    	 //状态过滤选择器
+    	 console.log($("input:disabled"));
+    	 console.log($("input:checked"));
+    	 //$("option:selected")
+    	 //*表单选择器
+    	 console.log($(":button"));
+    	 console.log($(":checkbox"));
+     }
+     
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>北京</li>
+      <li id="sh">上海</li>
+      <li>广州</li>
+      <li>深圳</li>
+    </ul>
+    <table>
+      <tr>
+       <td>1</td>
+       <td>王五</td>
+       <td>25</td>
+      </tr>
+      <tr>
+       <td>2</td>
+       <td>李四</td>
+       <td>25</td>
+      </tr>
+      <tr>
+       <td>3</td>
+       <td>赵六</td>
+       <td>27</td>
+      </tr>
+      <tr>
+       <td>3</td>
+       <td>马七</td>
+       <td>27</td>
+      </tr>
+    </table>
+    <p>范传奇病了</p>
+    <p>王克晶病了</p>
+    <p>梁健全病了</p>
+    <p>苍老师病了</p>
+    <p style="display:none;">我也没事</p>
+    <p></p>
+    <div>
+     <input type="button" value="按钮"/>
+     <input type="button" value="按钮"/>
+     <input type="button" value="提交"/>
+     <input type="button" value="注册"/>
+    </div>
+    <div>
+     <input type="text"/>
+     <input type="password" disabled/>
+     <input type="checkbox"/>
+     <input type="checkbox" checked/>
+     <input type="checkbox" checked/>
+    </div>
+  </body>
+</html>

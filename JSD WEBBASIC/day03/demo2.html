@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>box</title>
+    <style>
+      /*统一给div设置宽高和边框*/
+      div{
+      width:100px;
+      height:50px;
+      border:1px solid red;
+      }
+      /*1.四边设置内外边距
+        padding:值；
+        margin:值；
+      */
+      #d2{
+      padding:20px;
+      margin:20px;
+      }
+      /*2.单边设置内外边距
+       padding:top right bottom left;
+       margin:top right bottom left;
+      */
+      #d3{
+      padding:30px 50px 30px 50px;
+      margin:30px 50px 30px 50px;
+      }
+      /*3.单边设置内外边距
+      padding-top/right/bottom/left:值；
+      margin-top/right/bottom/left;值
+               对顺序没有要求
+      */
+      #d4{
+      padding-top:30px;
+      padding-right:50px;
+      pading-bottom:30px;
+      padding-left:50px;
+      margin-top:30px;
+      margin-right:50px;
+      margin-bottom:30px;
+      margin-left:50px;
+      }
+      /*4.对边设置内外边距：
+        padding:上下 左右内边距
+        margin:上下 左右内边距
+      */
+      #d5{
+      padding:30px 50px;
+      margin:30px 50px;
+      }
+      /*5.对边设置外边距的特殊写法
+      margin:上下 auto
+      auto=水平自动居中*/
+      #d6{
+      margin:30px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="d1">d1</div>
+    <div id="d2">d2</div>
+    <div id="d3">d3</div>
+    <div id="d4">d4</div>
+    <div id="d5">d5</div>
+    <div id="d6">d6</div>
+    <table border="1px">
+    
+    </table>
+    
+  </body>
+</html>

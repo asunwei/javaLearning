@@ -1,0 +1,57 @@
+3)自动装配(了解)
+	autowire:
+		byName:容器依据属性名查找对应的
+					bean,然后调用对应的set方法
+					来完成注入。
+		byType:容器依据属性类型查找对应的
+					bean,然后调用对应的set方法
+					来完成注入。
+					注意：有可能有多个bean满足条件，
+					会报错。
+		constructor:容器依据属性类型查找对应的
+					bean,然后调用对应的构造器
+					来完成注入。
+					注意：有可能有多个bean满足条件，
+					会报错。
+		
+1.注入不同类型的值
+  (1)基本类型
+  	使用value属性
+  (2)对象类型
+  	使用ref属性
+  (3)集合类型
+  	1)List
+  	<list>
+  		<value>
+  	</list>
+  	2)Set
+  	<set>
+  		<value>
+  	</set>
+  	3)Map
+  	 <map>
+  	 	<entry key="" value=""/>
+  	 </map>	 	
+		4)Properties
+			<props>
+				<prop key="">xxxx</prop>
+			</props>
+		注：
+			也可以将集合当做一个bean来配置。
+			<util:list>,<util:set>,<util:map>,
+			<util:properties>
+		一个特殊用法:
+			<util:properties id="" 
+			location="classpath:config.properties"/>
+2.spring表达式
+	 类似于el表达式，用于读取bean的属性值。
+	 #{eb.name}
+	 	读取id为"eb"的name属性值。
+	 #{eb.interest[1]}
+	 	读取id为"eb"的interest(List集合)
+	 	的第二个元素值。
+	 #{eb.score.math}
+	 	读取id为"eb"的score(Map)的key为math的值。
+	 
+	 	
+	 			

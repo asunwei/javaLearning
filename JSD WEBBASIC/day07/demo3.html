@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>动态时钟</title>
+    <style>
+      #clock{
+        border:1px solid red;
+        text-align:center;
+        width:200px;
+        line-height:30px;
+        height:30px;
+        font-size:20px;
+      }
+    </style>
+    <script>
+    //定时器id，默认为空
+    var id=null;
+    //启动频率是1s
+      function start(){
+    	//如果启动了，就不要再次启动
+    	if(id){
+    		return;
+    	}
+    	  //启动定时器（
+    	  id = setInterval(function(){
+    		  //alert(1);
+    	  //获取当前时间
+    	  var now=new Date();
+    	  var time = now.toLocaleTimeString();
+    	  //将时间写入clock
+    	  var p=document.getElementById("clock");
+    	  p.innerHTML = time;
+    	  },1000);
+    	  
+      }
+      function stop(){
+    	  //启动的定时器可以暂停，未启动的不需要赞同
+    	  if(id){
+    	  clearInterval(id);
+    	  id=null;
+    	  }
+      }
+    </script>
+  </head>
+  <body>
+    <p>
+      <input type="button" value="启动" onclick="start();"/>
+      <input type="button" value="暂停" onclick="stop();"/>
+    </p>
+    <p id="clock"></p>
+  </body>
+</html>

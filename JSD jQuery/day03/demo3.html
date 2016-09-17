@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>合成事件</title>
+    <style>
+      .big{
+        width:300px;
+        height:300px;
+      }
+       .normal{
+         width:218px;
+         height:218px;
+       }
+    </style>
+    <script src="../js/jquery-1.11.1.js"></script>
+    <script>
+    //页面加载后
+      $(function(){
+    	  //绑定事件
+    	  $("img").hover(
+    		function(){
+    			$("img").removeClass("normal").addClass("big");
+    		},//鼠标悬停时
+    		function(){
+    			$("img").removeClass("big").addClass("normal");
+    		} //鼠标离开时
+    	  );
+    	  $(":button:first").click(function(){
+    		  alert(1);
+    		  //toggle可以让元素在显示与隐藏之间切换
+    		  $("img").toggle();
+    	  });
+    	  $(":button:last").click(function(){
+    		  //trigger()用来模拟事件操作，即
+    		  //它可以代替人的行为，自动触发事件
+    		  for(var i=0;i<10;i++){
+    			  $(":button:first").trigger("click");
+    		  }
+    	  });
+      });
+    </script>
+  </head>
+  <body>
+    <p>
+    <input type="button" value="切换"/>
+    <input type="button" value="10连击"/>
+    </p>
+    <p>
+      <img src="../images/01.jpg"/>
+    </p>
+  </body>
+</html>

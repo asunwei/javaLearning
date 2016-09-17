@@ -1,0 +1,65 @@
+1.Spring的事务管理
+
+#事务的作用和意义
+作用：可以保证一组操作完整性（涉及到两个或两个以上的数据操作）
+使用时机：两个或者以上的操作，至少一个操作涉及DML
+
+#回顾就JDBC数据事务管理
+JDBC是默认提交（commit）
+con.executeUpdate();//自动commit
+
+事务操作处理
+public class SomeService（）{
+try{
+
+}
+
+}
+
+
+#Spring事务管理
+定义一个bean组件
+DateSourceTransactionManager
+启动事务注解配置@Transactional
+<tx: annotation-driven>
+
+
+2.Spring AOP编程
+#AOP概念
+Aspect Oriernted Programming
+面向切面编程
+Object Oriented Programming
+面向对象编程
+AOP以OOP为基础，可以将共同的业务和传统业务解耦，利用配置指定作用关系
+AOP使用时机：共通处理，调用时机相同
+##切面（Aspect）
+切面就是提取出来的共同的业务处理逻辑，
+可以通过配置作用到其他目标组件方法上
+（在Spring容器中切面组件可以往其他bean组件上作用）
+##切入点（Pointcut）
+用于指定哪些组件或方法是切入目标，在spring中是通过
+一个切入点表达式指定
+=====类型限定表达式========
+within（类型）
+within（org.service.UserService）
+within（org.service.*） 
+//匹配org.service包和子包下所有类和方法
+within（org.service..*） 
+=====方法限定表达式======
+execution（修饰符？ 返回值类型 方法名（参数） 抛出异常？）
+//匹配org.Service.UserService.checkLogin方法
+execution(* org.Service.UserService.checkLogin(..))
+//匹配所有Bean中load开头的方法
+=====Bean名称限定表达式=====
+bean(Bean组件名的ID)
+//匹配Spring容器中id=userService的组件的Bean组件
+bean（"userService"）
+//匹配所有以Service结尾的Bean组件
+bean（"userService"）
+//匹配所有以Service结尾的Bean组件
+bean（"*Service"）
+execution(* load*（..）)
+##通知（Advice）
+
+##目标（Target）
+##动态代理（）

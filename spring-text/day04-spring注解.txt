@@ -1,0 +1,79 @@
+1.基于注解
+    编程步骤
+  step1：将spring mvc相关的jar文件添加到WEB-INF/lib下
+  step2：添加spring配置文件（spring-mvc.xml）
+  step3：配置DispatcherServlet(web.xml)
+   注：
+  DispatcherServlet的初始方法在执行时会启动spring容器
+  step4：Controller（二级控制器）
+ a.在类名前添加@Component,@Service,@Controller,@Repository
+  step5：JSP
+  step6：完成springmvc.xmspringmvc01l配置
+  a. 配置组件扫描
+		<context:component-scan base-package="controller"/>
+  b. 配置spring mvc注解扫描 
+		<mvc:annotation-driven/>
+  注：
+       组件扫描只针对@Component,@Service,@Controller,@Repository
+       如果要让RequesMapping注解起作用，需要配置mvc注解扫描
+  c.视图配置解析器
+  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/WEB-INF/"/> 
+	<property name="suffix" value=".jsp"/> 
+  </bean> 
+  
+  
+2.读取请求参数
+（1）使用request提供的方法
+getParameter或者getParameterValues方法
+（2）在处理方法里面，添加相应的参数
+注：
+a.参数名应该与请求参数名一致
+b.如果不一致。可以使用@Requestparam("请求参数名")
+（3）使用对象来封装
+      封装请求参数类
+          要求如下：
+    a.属性名和请求参数一致
+    b.提供相应的get/set方法
+    
+ 3.向页面传值
+  （1）使用request绑定数据
+  	public String login4(User user,HttpServletRequest req){
+		req.setAttribute("username", user);
+		//默认情况下，使用转发方式来跳转
+		return "success";
+	}
+  (2)使用ModelAndView
+  	public ModelAndView login5(User user){
+		//ModelAndView（String viewName,Map data）
+		Map<String,Object> data = new HashMap<String,Object>(); 
+		data.put("user", user);
+		return new ModelAndView("success",data);
+	}
+  (3)使用ModelMap
+	  public String loginn6(User user,ModelMap data){
+			data.addAttribute("user",user);
+			return "success";
+		}
+  (4)使用session绑定数据
+	public String login7(User user,HttpSession session){
+		session.setAttribute("user", user);
+		return "success";
+	}
+  
+ 4.如何重定向
+ （1）如果处理方法的返回值是String
+   return "redirect:toSuccess.do"
+ (2) 如果处理方法返回的是ModelAndView
+ RedirectView rv = new RedirectView("toSuccess.do");
+ return new ModelAndView(rv);
+  
+ 5.软件分层
+   （1）如何分层
+   表示层：用户操作界面，展现数据。
+   业务层：业务逻辑。
+   数据访问层：数据库的操作
+   数据库：一般做法
+   a.表示层调用业务层，业务层调用数据访问层
+   b.上一层应该通过接口调用下一层提供的服务
+   

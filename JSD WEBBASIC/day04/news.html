@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>新闻图片<绝对定位></title>
+    <style>
+    div{
+     border:1px solid blue;
+     width:390px;
+     height:258px;
+     /*加position 便于内部的p做绝对定位*/
+     position:relative;
+     /*不设置偏移量，则他的位置不动*/
+    }
+    p{
+    border:1px solid red;
+    margin:0;
+    position:absolute;
+    /*设置偏移量*/
+    right:0px;
+    bottom:1em;
+    width:390px;
+    
+    background-color:#bbb;
+    text-align:center;
+    }
+    </style>
+  </head>
+  <body>
+    <div>
+    <img src="../images/2.jpg"/>
+    <p>苍老师到此一游</p>
+    </div>
+  </body>
+</html>

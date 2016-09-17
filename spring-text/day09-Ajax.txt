@@ -1,0 +1,56 @@
+##Ajax基本使用
+##Ajax+JSON应用
+##jQuery+Ajax+JSON应用
+
+Ajax基本使用
+
+什么是Ajax，优点，什么时候使用
+全称：Asynchronous JavaScript and XML
+异步的JavaScript和XML
+
+Ajax请求，服务器返回的是纯数据，不是HTML页面
+
+优点：
+   -异步处理
+   -提升用户体验，（在页面不刷新的情况下，处理请求，改变页面部分显示） eg：QQ农场
+   -提升请求的处理效率
+选用标准：避免整个页面频繁刷新，实现局部刷新处理
+
+XMLHttpRequest使用
+XMLHttpRequest作用：发送请求，接收相应结果（内置在浏览器）
+
+##XMLHttpRequest对象使用
+-new XMLHttpRequest();//firefox，chrome
+-new ActiveXObject("Microsoft.XMLLHttp");//IE
+-open(请求类型get/post，url地址，同步异步true/false)//创建请求
+-send(post数据)//发送请求
+-responseText://获取服务器返回的内容
+-responseXML;//获取服务器返回的XML内容
+-readyState;//请求处理状态，值0-4
+0:请求未初始化  1：请求未发送 2：请求发送完毕
+3：请求正在处理  4：请求处理完毕
+-onreadystatechange:发生状态任何改变的事件控制对象
+status://服务器响应的HttpServlet响应的值
+
+步骤：
+    1.获取Ajax对象
+    2.设置回调函数
+    3.创建请求
+    4.发送请求
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+注，概念，什么时候用，相关项目使用

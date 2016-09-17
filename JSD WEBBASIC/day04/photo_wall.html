@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>照片墙<相对定位></title>
+    <style>
+      /*给墙刷个颜色*/
+      body{
+        background-color:#088
+      }
+      /*设置ul的样式*/
+      ul{
+       border:1px solid red;
+       width:780px;
+       margin: 30px auto;
+       /*去掉符号*/
+       list-style-type:none;
+       
+      }
+      /*设置li的样式*/
+      li{
+        border:1px solid red;
+        padding:10px;
+        margin:10px;
+        width:218px;
+        /*左浮动*/
+        float:left;
+        background-color:#fff;
+      }
+      ul,li{
+      border:0;
+      }
+      p{
+       text-align:center;
+      }
+      /*用相对定位来实现抖动的效果*/
+      li:hover{
+      /*设置相对定位*/
+      position:relative;
+      /*设置偏移量*/
+      left:2px;
+      top:-2px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+    <li>
+    <img src="../images/01.jpg"/>
+    <P>啊，Teacher苍</P>
+    </li>
+    <li>
+    <img src="../images/02.jpg"/>
+    <P>你在何方？</P>
+    </li>
+    <li>
+    <img src="../images/03.jpg"/>
+    <P>难道去了东洋</P>
+    </li>
+    <li>
+    <img src="../images/04.jpg"/>
+    <P>那边痴汉很多很多</P>
+    </li>
+    <li>
+    <img src="../images/05.jpg"/>
+    <P>你一定要穿好衣裳</P>
+    </li>
+    <li>
+    <img src="../images/06.jpg"/>
+    <P>别走光</P>
+    </li>
+    </ul>
+  </body>
+</html>

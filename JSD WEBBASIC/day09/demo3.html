@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>事件</title>
+    <style>
+     div{
+     width:300px;
+     height:300px;
+     border:1px solid red;
+     margin:50px auto;
+     padding:50px;
+     }
+     p{
+     width:100px;
+     height:100px;
+     border:1px solid blue;
+     padding:30px;
+     }
+    </style>
+    <script>
+      function f1(e){
+    	  //获取事件源，就是事件触发的具体位置，返回就是这个位置对应的元素节点
+    	  var obj = e.srcElement || e.target;
+    	  //对于元素节点而言，其nodeName就是大写的标签名
+    	  alert(obj.nodeName);
+      }
+      //取消事件冒泡
+      function f2(e){
+    	  alert("按钮");
+    	  if(e.stopPropagation()){
+    		  e.stopPropagation();
+    	  } else {
+    		  e.cancelBubble = true;
+    	  }
+      }
+    </script>
+  </head>
+  <body onclick="alert('body')">
+  <div onclick="alert('分区')">
+    <p onclick="alert('段落')">
+      <input type="button" value="按钮" onclick="f2(event);"/>
+    </p>
+  </div>
+  <div onclick = "f1(event);">
+    <span>aaa</span>
+    <h1>bbb</h1>
+    <input type="button" value="ccc"/>
+  </div>
+  </body>
+</html>

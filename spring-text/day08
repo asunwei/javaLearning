@@ -1,0 +1,104 @@
+# Spring
+##对象的生存周期管理---即内存的管理
+
+1.创建
+2.使用
+3.管理
+
+##对象的管理
+1.new创建：适合简单对象
+2.利用工厂生产，适合复杂对象
+  -利用方法生产一个对象
+  -是工作中最常见方式
+  -可以利用方法封装复杂的对象创建过程
+3.注入获得：最方便的方式，对象也是1和2的方式创建的
+  -方便：只需要定义变量，等待对象的注入
+  -有两个方面组成：等待注入、控制注入的
+  -使用者简单，注入者复杂
+  
+  ##Spring IOC/DI 就是利用注入方式管理对象
+  
+  *1.需要注入变量的对象，必须由spring管理
+ 方式一： <bean id="food" class="...."
+   
+ 方式二：          spring.xml
+		    <组件扫描>
+		   
+		  
+		  @Component
+		   class Person{
+		     @Resource
+		     Food food
+		   }
+  //调用spring的工厂方法（getBean（））获得spring管理对象
+    PerSon p = ctx.getBean("person",....calss);
+    
+    //错误的做法，不能注入food对象
+    Person p = new Person();
+    
+ > Spring的核心作用是管理对象的生存周期。
+ 如：springmvc  springjdbc
+ 
+ ##spring在管理组件的同时还提供了很多组件
+   - Spring MVC
+   - Spring JDBC
+   
+  *spring运行在spring环境下，需要启动spring才可以注入
+       对象由spring创建
+    
+ 二.MyBatis
+   轻量级的JDBC映射工具，可以简化JDBC的开发，几乎不用在写JDBC代码
+    
+    
+  >resultType：是结果集的行映射
+MyBatis 如何实现CRUD
+##增加对象
+
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

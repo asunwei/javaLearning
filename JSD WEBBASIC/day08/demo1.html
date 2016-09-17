@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>查询节点</title>
+  </head>
+  <body>
+    <ol>
+     <li>浙江省</li>
+     <li>广东省</li>
+     <li>江苏省</li>
+    </ol>
+    <ul id="cities">
+    <li>北京市</li>
+    <li class="south" id="sh">上海市</li>
+    <li class="south">广州市</li>
+    <li class="south">深圳市</li>
+    </ul>
+    <p>
+    <input type="radio" name="sex" checked/>男
+    <input type="radio" name="sex"/>女
+    </p>
+    <script>
+    //*1.根据标签名查询元素节点（DOM树中的对象）
+   var lis = document.getElementsByTagName("li");
+    console.log(lis);
+    var ul = document.getElementById("cities");
+    lis = ul.getElementsByTagName("li");
+    console.log(lis);
+    
+    //2.根据class属性查询的元素节点
+     var lis = document.getElementsByClassName("south");
+    console.log(lis);
+    
+    //3.根据name属性查询元素节点，只适用于表单元素。<input/select/textarea>
+    var radios = document.getElementsByName("sex");
+    console.log(radios);
+    
+    //4.查询某节点的孩子
+    console.log(ul.childNodes);//带空格
+    console.log(ul.children);//不带空格
+    
+    //5.查询某节点的父亲
+    var sh = document.getElementById("sh");
+    console.log(sh.parentNode);
+    
+    //6.查询某节点的兄弟
+    console.log(sh.previousElementSibling);
+    console.log(sh.nextElementSibling);
+    var sz=sh.parentNode.children[3];
+    console.log(sz);
+    </script>
+ 
+  </body>
+</html>

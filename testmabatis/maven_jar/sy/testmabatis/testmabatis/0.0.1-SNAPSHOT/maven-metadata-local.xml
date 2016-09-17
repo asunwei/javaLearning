@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>sy.testmabatis</groupId>
+  <artifactId>testmabatis</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <localCopy>true</localCopy>
+    </snapshot>
+    <lastUpdated>20160424040211</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>war</extension>
+        <value>0.0.1-SNAPSHOT</value>
+        <updated>20160424040211</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.0.1-SNAPSHOT</value>
+        <updated>20160424040211</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

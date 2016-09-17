@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>背景</title>
+    <style>
+    /*设置背景图*/
+    body{
+      background-image:url("../images/background.png");
+      background-repeat:repeat-x
+    }
+    /*设置平铺属性*/
+    body{
+    /*平铺样式
+    repeat
+    repeat-x
+    repeat-y
+    no-repeat
+    */
+      background-repeat:repeat-y;
+     /* 是否居中*/
+     background-position:center;
+    }
+    div{
+      border:1px solid red;
+      width:100px;
+      height:100px;
+      margin:30px auto;
+    }
+    /*设置背景可以简化：
+    background:背景色 背景图 平铺 位置
+          不需要设置的值可以省略
+    */
+    .enemy{
+    background:url("../images/airplane.png") no-repeat center;
+    }
+    .hero{
+    background:url("../images/hero0.png") no-repeat center;
+    width:150px;
+    height:150px;
+    }
+    /*设置背景图滚动属性*/
+    body{
+    background-attachment:fixed;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- 敌机 -->
+    <div class="enemy"></div>
+    <div class="enemy"></div>
+    <div class="enemy"></div>
+    <div class="enemy"></div>
+    <div class="enemy"></div>
+    <div class="enemy"></div>
+    <div class="enemy"></div>
+    <div class="enemy"></div>
+    <div class="enemy"></div>
+    <div class="enemy"></div>
+    <div class="enemy"></div>
+    <div class="enemy"></div>
+    <div class="enemy"></div>
+    <div class="enemy"></div>
+    <!-- 英雄机 -->
+    <div class="hero"></div>
+    <div class="hero"></div>
+    
+  </body>
+</html>

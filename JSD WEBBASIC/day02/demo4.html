@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>选择器</title>
+    <style>
+      /*1.元素选择器
+               特点：可以选择页面上指定的所有元素选择范围大  
+      */
+      p{
+      color:red;
+      }
+      /*2.类选择器
+                可以选择页面上具有某些共性的元素。
+                特点是选择的范围较大
+      */
+      .female{
+      color:pink;
+      }
+      /*3.id选择器
+                   可以选择页面上指定id的唯一元素
+                    特点：选择的结果是精确的
+      */
+      #p4{
+      background-color:yellow;
+      }
+      /*
+      4.选择器组：可以选中一组选择器，每个选择器对应的目标的并集（合并）
+      */
+      .female,#p4{
+      color:blue;
+      }
+      /*5.派生选择器
+      1)后代选择器
+                  选择某元素指定的后代（子孙）
+      2)自选择器
+                  选择某元素的孩子（子）
+      */
+      /*选择div下名为b的子孙*/
+      #d1 b{
+        color:red;
+      }
+      /*选择div下名为b的孩子*/
+      #d1>b{
+        font-size:30px;
+      }
+      /*6)伪类选择器*/
+     /* 6.1) link 选择未被点过的超链接*/
+     a:link{
+        color:yellow;
+     }
+     /* 6.2） visited 选择已被点过的超链接*/
+     a:visited{
+        color:green;
+     }
+     /* 6.2）active 选择激活态（正在点）的元素*/
+      #btn1:active{
+         background-color:red;
+      }
+      /*6.4）focus 选择有焦点（光标在闪烁）的元素*/
+      #t1:focus{
+        background-color:red;
+      }
+      /*6.5）hover 选择鼠标悬停（正在碰）的元素*/
+      span:hover{
+        background-color:red;
+      }
+      
+      
+      
+    </style>
+  </head>
+  <body>
+    <h1 class="female">苍老师</h1>
+    <h2>范传奇</h2>
+    <h3 class="female">王克晶</h3>
+      <p>苍老师啊苍老师</p>
+      <p>范传奇啊范传奇</p>
+      <p>王克晶啊王克晶</p>
+      <p id="p4">瞧你们那点破事</p>
+      <!--
+      <div> 父
+       <u>  子
+       <b>  孙
+       </b>
+       <u/>
+       <b>
+       <b/>
+      </div> 
+       -->
+      <div id="d1">
+                北京市<u>海淀区<b>北三环</b>西路</u>甲18号<b>中鼎<b/>大厦B8
+      </div>
+      <div id="d2">
+      <a href = "http://www.tmooc.cn">TMOOC</a>
+      <a href = "http:// www.cang.com">瞎编</a>
+      <input type = "button" value="点我" id="btn1"/>
+      <input type ="text" id="t1"/>
+      <span>别碰我</span>
+      </div>
+  </body>
+</html>

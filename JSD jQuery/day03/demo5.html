@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>动画</title>
+    <style>
+     /*动画是基于定位，通常采用相对定位*/
+     img{
+      position:relative;
+      /*该定位仅仅是为了实现动画
+                     因此这里不设置偏移量
+      */
+     }
+    </style>
+    <script src="../js/jquery-1.11.1.js"></script>
+    <script>
+     function show(){
+    	//$("img").show(2000);
+    	$("img").slideDown(2000);
+    	//$("img").fadeIn(2000);
+     }
+     function hide(){
+    	 //$("img").hide(2000);
+    	$("img").slideUp(2000);
+    	//$("img").fadeOut(2000);
+     }
+     function move(){
+    	 //本次动画基于相对定位，因此移动时的
+    	 //偏移量相对于图片起始位置来设置的
+    	 //起始位置：设图片左上角（0，0）
+    	 //参数1：偏移量，采用json（直接量）对象
+    	 //参数2：动画执行时间
+    	 $("img").animate({"left":"300px"},2000);
+    	 $("img").animate({"top":"300px"},2000);
+    	 $("img").animate({"left":"0"},2000);
+    	 $("img").animate({"top":"0"},2000);
+    	
+     }
+    </script>
+  </head>
+  <body>
+    <p>
+     <input type="button" value="显示" onclick="show();"/>
+     <input type="button" value="隐藏" onclick="hide();"/>
+     <input type="button" value="移动" onclick="move();"/>
+    </p>
+    <p>
+      <img src="../images/01.jpg"/>
+    </p>
+  </body>
+</html>

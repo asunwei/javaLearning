@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>计算平方</title>
+    <script>
+    //调试技巧
+    //1.看控制台的报错信息
+    //2.如果程序能够进入方法，用打桩法
+    //3.如果程序没有进入方法，说明此方法内有语法错误，导致js无法识别她
+    //可以利用排除法加二分法定位错误位置
+     function cal(){
+    	 console.log(1);
+    	 //1.获取文本框的值
+    	var input= document.getElementById("num");
+    	 console.log(input);
+    	 var val=input.value;
+    	 //console.log(val);
+    	 //2.判断取值是否合法
+    	 //从页面上获取的值如果没取到，默认为""，而不是null
+    	 var span=document.getElementById("result");
+    	 if(val==""||isNaN(val)){
+    		 //如果输入的值为空，或者非数字，则非法，在span给出错误提示
+    		 span.innerHTML= "请输入数字";
+    	 }else{
+    		 //合法，即计算其平方将结果写入span
+    		 //一般加法需要强转，否则会当作字符串加，而减，乘，除不需要强转
+    		 //因为字符串没有这些运算js自动转成数字
+    		 span.innerHTML = val*val;
+    	 }
+     }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="num"/>
+    <input type="button" value="平方" onclick="cal();"/>
+    = <span id="result"></span>
+  </body>
+</html>

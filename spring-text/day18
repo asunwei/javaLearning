@@ -1,0 +1,23 @@
+1.#分享笔记查询
+#发送Ajax请求
+时机：输入查询关键字，按回车键发送
+提交：输入关键字
+地址：/share/load.do
+
+#服务器处理
+地址：/share/load.do
+-->LoadShareNoteController.execute
+-->ShareService.loadShares
+-->ShareDao-->cn_share(查询)
+-->返回JSON结果
+
+select * from cn_share where cn_share_title like '%java%'
+
+#Ajax回调
+搜索结果列表去div显示，其他列表区隐藏
+全部笔记列表区：pa_part_2
+回收站笔记列表区：pa_part_
+全部笔记列表区：pa_part_2
+全部笔记列表区：pa_part_2
+全部笔记列表区：pa_part_2
+全部笔记列表区：pa_part_2

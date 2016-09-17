@@ -1,0 +1,14 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>javax.xml</groupId>
+  <artifactId>namespace</artifactId>
+  <version>1.0.1</version>
+  <name>javax.xml.namespace package</name>
+  <description>
+    Part of the Java Web Services Developer Pack 1.6
+  </description>
+  <url>http://java.sun.com/xml/jaxb/index.jsp</url>
+  <distributionManagement>
+    <downloadUrl>http://java.sun.com/webservices/downloads/webservicespack.html</downloadUrl>
+  </distributionManagement>
+</project>

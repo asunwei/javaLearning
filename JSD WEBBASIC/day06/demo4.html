@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>模拟方法重载</title>
+    <script>
+      function sum(){
+    	  //类数组，返回类型是object而不是Array
+    	 console.log(typeof(arguments));
+    	  var sum=0;
+    	 for(var i=0;i<arguments.length;i++){
+    		 sum+=arguments[i];
+    	 }
+    	 return sum;
+      }
+    </script>
+  </head>
+  <body>
+    <input type="button" value="1-3的和" onclick="alert(sum(1,2,3));"/>
+    <input type="button" value="1-5的和" onclick="alert(sum(1,2,3,4,5));"/>
+  </body>
+</html>

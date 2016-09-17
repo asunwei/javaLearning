@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>表单</title>
+  </head>
+  <body>
+    <!-- form是表单元素（注意不是from）
+                       用来圈定提交的范围，即form元素
+                        内的表单控件才可以提交给服务器
+         1.action 用来指定要提交的哪个服务器
+         2.method
+         3.enctype
+     -->
+    <form action="http://tmooc.cn" style="border:1px solid red;">
+      <!-- 表单控件分2类 -->
+      <!--
+       1.intput元素
+                  很多，用type区分：
+       1）文本框、密码框
+       2）单选框、多选框
+       3）文件框、隐藏框
+       4）提交、重置、普通按钮
+      -->
+      <!--
+      1）文本框、密码框
+        value:用来设置一个默认值 
+        maxlength:设置输入的最大长度
+        readonly: 设置为只读
+       -->
+      <p>
+                    账号：<input type="text" value="tarena" maxlength="10" readonly/>
+      </p>
+      <p>
+                   密码：<input type="password" value="123" maxlength="10" readonly/>
+      </p>
+      <!--
+       2)单选框、多选框 
+         name：框的名称，同名的框视为一组，同一组单选框是互斥的
+                                        同一组多选框的作用将来再说
+      checked: 设置默认选中的
+        value: 以后再说
+       -->
+       <p>
+                  性别：<input type="radio" name="sex"/ checked id="male"><label for="male">男</label>
+            <input type="radio" name="sex" id="female"/><label for="female">女</label>
+       </p>
+       <p>
+                  爱好：<input type="checkbox" name="favorites" checked/>篮球
+            <input type="checkbox" name="favorites" checked/>足球
+            <input type="checkbox" name="favorites"/>桌球
+       </p>
+       <!--
+       3）文件框，隐藏框 
+                      文件框：是用来上传文件:
+                      隐藏框：用来传递一些秘密数据，即传递不希望被用户看到的数据
+                      
+        -->
+        <p>
+                   头像：<input type="file" />
+        </p>
+        <p>
+        <input type="hidden" value="haha"/>
+        </p>
+        <!--
+        4)提交，重置，普通按钮
+                          提交按钮：可以提交表单中的数据
+                          重置按钮：可以将表单恢复成初始状态
+                          普通按钮：需要通过JS自定义    
+          value:用来设置按钮的名字           
+          -->
+          <p>
+          <input type="submit" value="注册"/>
+          <input type="reset" value="清空"/>
+          <input type="button" value="待定"/>
+          </p>
+      <!-- 
+       2.其他元素
+       1）label
+       2)下拉选
+       3）文本域
+       -->
+       <!-- 
+       1）lable：是表单中的文本，此文不可以和框绑定
+                          目的：是增大框的受力（可点击）面积
+                          绑定步骤：
+          a.在框上加id属性
+          b.在label上写for=“id值”。
+                          补充：任何框都有id属性，id就是框的身份证号，是唯一的            
+        -->
+        <!-- 
+                     下拉选：
+            value:以后再讲
+         selected:设置默认选项 
+         -->
+        <p>
+                    学历：
+            <select>
+              <option>小学</option>
+              <option>初中</option>
+              <option>高中</option>
+              <option>专科</option>
+              <option selected>本科</option>
+            </select>
+        </p>
+        <!-- 
+                      文本域：是超大文本框
+          rows: 设置其高
+          cols：设置其宽
+                           在标签内直接写的内容及时她的默认值
+         -->
+         <p>
+                        简介： <textarea rows="5" cols="30">那是一个秋天</textarea>
+         </p>
+    </form>
+  </body>
+</html>

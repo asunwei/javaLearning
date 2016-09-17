@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>自定义对象</title>
+    <script>
+    //1.采用直接量的方式创建对象
+    //格式：｛key:value,key:value｝
+    //其中key通常是字符串，value可以是任意类型数据
+    function f1(){
+    	//创建对象（object）
+    	var student = {"name":"小强","age":25,"work":function(){alert("我学java")}};
+    //使用对象
+    alert(student.name);
+    alert(student.age);
+    student.work();
+    };
+    //2.通过js自带的构造器创建对象。
+    //如：Date/RegExp/function/Object
+    function f2(){
+    	//创建对象（object)
+    	var teacher = new Object();
+    	teacher.name = "苍老师";
+    	teacher.age = 60;
+    	teacher.work = function(){
+    		alert("我教JAVA");
+    	}
+    	//使用对象
+    	alert(teacher.name);
+    	alert(teacher.age);
+    	teacher.work();
+    }
+    //3.使用自定义构造器创建对象
+    //自定义构造器就是自己提前定义的一个function。
+    //直接调用的function叫做函数
+    //new的function就是构造器
+    function f3(){
+    	var pro = new programmer("小明",26,function(){alert("我写JAVA")});
+    	//使用对象
+    	alert(pro.age);
+    	alert(pro.name);
+    	pro.work();
+    	
+    }
+    //自定义构造器
+    function programmer(name,age,work){
+    	//在构造器中this就是new出来的对象
+    	//将传入的值存入到当前对象的属性中。
+    	//this.name -> 对象的属性
+    	//name -> 传入的数据
+    	this.name = name;
+    	this.age = age;
+    	this.work = work;
+    }
+    </script>
+  </head>
+  <body>
+    <input type="button" value="直接量" onclick="f1();"/>
+    <input type="button" value="自带构造器" onclick="f2();"/>
+    <input type="button" value="自定义" onclick="f3();"/>
+  </body>
+  
+</html>

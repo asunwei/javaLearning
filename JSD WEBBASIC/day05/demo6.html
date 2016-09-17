@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>猜数字</title>
+    <script>
+     //直接写的js，在页面加载时执行，所以一定是在用户点猜之前执行。
+     var init_num = parseInt(Math.random()*100);
+     console.log(init_num);
+      console.log(1);
+     function guess(){
+        //1.获取文本框的值
+        var val=document.getElementById("num").value;
+        var span=document.getElementById("result");
+        console.log(val);
+        //判断
+        if(val==""||isNaN(val)){
+        	//非法，给予提示
+        	span.innerHTML = "请输入数字";
+        }else{
+        	//合法，再比较大小给予提示
+        	if(val>init_num){
+        		span.innerHTML = "大了";
+        	}else if(val<init_num){
+        		span.innerHTML = "小了";
+        	}else {
+        		 span.innerHTML = "对了";
+        		}
+        	}
+        }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="num"/>
+    <input type="button" value="猜" onclick="guess();"/>
+    <span id="result"></span>
+  </body>
+</html>

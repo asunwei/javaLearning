@@ -1,0 +1,13 @@
+解决表单中的中文参数值读取问题
+  step1.确保表单所在的页面按照指定的
+     的字符集来编码，另外，表单提交方式要
+    设置为“post”
+  step2.添加一个过滤器
+ 
+ 练习：
+ 完成资费列表
+  step1.Cost实体类
+  step2.CostDAO接口和CostDAOImpl实现类
+  step3.CostService接口和CostServiceImpl实现类
+  step4.fee_list.jsp
+  step5.CostController

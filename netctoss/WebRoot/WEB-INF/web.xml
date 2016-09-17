@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  <servlet-class>web.MainServlet</servlet-class>
+  <servlet-name>main</servlet-name>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>main</servlet-name>
+  <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <!-- 配置错误页面 -->
+
+	<error-page>
+	  	<error-code>404</error-code>
+	  	<location>/WEB-INF/error.jsp</location>
+	  </error-page>
+	  <error-page>
+	  	<error-code>405</error-code>
+	  	<location>/WEB-INF/error.jsp</location>
+	  </error-page>
+	  <error-page>
+	  	<error-code>500</error-code>
+	  	<location>/WEB-INF/error.jsp</location>
+	  </error-page>
+	  
+	   <!-- 登录检查的filter -->
+  <filter>
+  <filter-class>web.LoginFilter</filter-class>
+  <!-- 声明不需要过滤的路径 -->
+  <init-param>
+    <param-name>exclusePath</param-name>
+    <param-value>/toLogin.do,/createImage.do,/login.do</param-value>
+  </init-param>
+  <filter-name>login</filter-name>
+  </filter>
+  <filter-mapping>
+  <filter-name>login</filter-name>
+  <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  
+</web-app>

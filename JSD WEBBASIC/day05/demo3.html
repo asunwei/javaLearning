@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>js的使用方式</title>
+    <!-- 2.嵌入式：写在script标签内的js 
+       此标签可以写在页面的任何位置，通常都在head里
+    -->
+    <script>
+    //js的注释和java一样
+    //将js封装成一个函数
+    //js函数具有如下特点
+    //1.都是共有的
+    //2.有返回值，但不用声明
+    //3.可以声明参数
+    function f2(){
+    	alert("传奇哥");
+    }
+    </script>
+    <!-- 3.文件调用式：引入js文件
+    规则：1.script要么用来引入js，或者在其内部写js.不能既引入又写js
+       2.script必须写成双标记
+     -->
+    <script src="a.js"></script>
+  </head>
+  <body>
+  <!-- js是通过事件触发的，因此需要先定义事件再写js
+      事件就是触发调用js的时机。
+      如：单击事件:onclick
+                双击事件:ondblclick
+   -->
+   <!-- 1.事件定义式：直接在定义事件时写js -->
+  <input type="button" value="事件定义式" onclick="alert('Hello world');"/>
+  <input type="button" value="嵌入式" onclick="f2();"/>
+  <input type="button" value="文件调用式" onclick="f3();"/>
+  </body>
+</html>

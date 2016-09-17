@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jboss</groupId>
+  <artifactId>jboss-j2ee</artifactId>
+  <packaging>jar</packaging>
+  <name>JBoss J2EE</name>
+  <version>4.0.0</version>
+  <description>JBoss J2EE Implementation.</description>
+  <url>http://www.jboss.com/</url>
+  <licenses>
+    <license>
+      <name>GNU Lesser General Public License</name>
+      <url>http://www.gnu.org/licenses/lgpl.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>http://anoncvs.forge.jboss.com/viewrep/JBoss/jboss-j2ee</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>jboss</groupId>
+      <artifactId>jboss-common</artifactId>
+      <version>4.0.0</version>
+    </dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,101 @@
+
+  反射（JAVA的自省机制）
+是java中“动态”执行代码的机制
+
+java中的静态：经过编译以后确定的执行顺序，称为“静态”
+java中的动态：在运行期间动态确定的执行顺序，称为“动态”
+
+}
+
+//如下代码是静态的，必须知道代码的类名和方法名之后，在
+//编译之前确定调用关系，无法动态的改变调用关系，称之为
+//静态代码绑定，无法动态的适应变化，必须使用反射（API）实现动态
+ Demo demo=new Demo();
+ demo.testToString();
+ demo.testArray();
+
+
+反射是java提供的一套API
+
+反射API功能
+    1 动态加载类：运行期间加载一个类
+      Class.forName()
+                动态的获取类的信息
+    
+    2 动态创建对象
+         最常用的是：动态调用无参数构造器对象
+        1）动态加载类cls
+        2）调用Class对象的newInstance()方法
+                             这个方法会自动调用无参数构造器，创建对象；
+           Object obj=cls.newInstance();
+           
+    3 动态的调用方法
+       1) 找到一个对象的类信息
+       Class cls=obj.getClass();
+       2) 根据类信息，找到方法信息Method
+       3） Method类型的方法invoke(调用）
+                       可以在对象上调用一个方法    
+       
+                      封装一个方法：传入一个对象。和一个方法名
+                     动态执行一个对象的某个方法
+       
+    4 动态访问属性
+    
+    String classname="某类名"；
+    
+    //动态加载类
+   Class cls = Class.forName(classname);
+   
+   //cls引用了一个Class类型的对象
+   //这个对象是通往方法区的大门，通过它可以获得方法区中类的信息
+   //(属性声明，构造器声明，方法声明)
+   
+   //获取在方法区中这个类的全部声明属性
+   //Declared：声明Field的属性
+   Field[] field = cls.getDeclaredFields();
+   //每个field对象，代表类中声明的一个属性
+   //在field对象上调用getName获取属性数据名称
+   //在field对象上调用getType获取属性数据类型
+   String name=field.getName();
+   String name=field.getType();
+    
+    
+软件需求：执行一个对象的全部以test为开头的无参数方法（JUnit3）
+
+思路：
+    1 动态加载类型到方法区
+    1.1 动态调用无参数构造器创建
+    2 找到方法区中的全部方法
+    3 遍历全部方法，找到方法以test开头
+              无参数的方法：方法参数类型数组的长度为0
+    4 在对象上调用无参数方法
+    
+    
+
+class Demo{
+    public void testToString(){
+        List<String> list=new ArrayList<String>();
+        System.out.println(list);    
+    }
+    public void testArray(){
+        int[] ary={2,3,4};
+        System.out.println(Array.toStrinng(ary));
+    }
+    
+    
+    总结
+ 反射："动态"执行API
+ 何时用：运行之前不知道类名，方法名，属性名 就需要使用动态的反射API编程了
+  
+ 反射API：编程效率低，运行效率低
+ 
+ 工作中，能够使用静态调用，尽量使用静态，如果静态不能使用再用反射
+ 
+ 常用情况：所有的框架都用到了反射，JUnit用到反射
+    
+    
+    
+
+
+
+

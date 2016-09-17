@@ -1,0 +1,97 @@
+组件扫描：
+	  指定一个包路径，Spring会自动扫描该包
+	及其子包所有组件类,当发现组件类定义前有
+	特定的注解标记时，就将该组件纳入到Spring
+	容器。等价于原有XML配置中的<bean>定义功能。
+	组件扫描可以替代大量XML配置的<bean>定义。
+(2）如何使用
+   step1:在配置文件当中，添加
+   <context:component-scan base-package="">
+   让容器扫描指定的包及其子包下面的类
+   step2：在类前面添加
+   @Component
+   注：
+   默认情况下，bean的id就是类名首字母小写，如果向重写
+   定义id，使用Component（）形式定义
+   @Component:通用注解
+   @Servvice：用于业务层组件注解
+   @Respository：用于持久层组件注解
+   @Controller:用于控制层组件注解
+(3)生命周期相关的几个方法
+   @PostConstruct 初始化方法
+   @PreDestroy    销毁方法
+(4)作用域
+   @Scope（"proptotype"）
+        缺省值：singleton
+(5)@Lazy(true)
+       缺省值：false
+      容器在默认情况下，会将作用域为singleton的bean实例化
+      如果延迟加载，则不会将这些bean实例化
+(6)依赖注入相关几个标注
+  @Autowired和Qualifier
+  @Autowired可以用于构造器注入也可以用于set方式注入
+  1）构造器注入
+  a.@Autowire加在构造器前面
+  b.@Qualifier加载参数前面，用于指定要注入的bean是id
+    注：
+           注入的是单例的时候，@Qualifier可省略，Spring按照类型匹配参数    
+  2)Set方式注入
+  a.@Autowired加在set方法前面
+  b.@qualifier加载参数前面，用于指定要注入的bean的id
+  注：
+        注入的是单例的时候，@Qualifier可省略，Spring按照类型匹配参数  
+  c.@Autowired也可以直接添加到属性前面，可以不写set方法  
+ 3)@Resource
+  a.该标注只支持setter方式注入
+  b.可以将该标注加到set方法前面
+    name属性用于指定要注入的bean的id
+  c.该标注也可以直接添加到属性前
+           此时可以不写set方法
+(7)使用spring表达式的标注
+   @Value
+        用法1：@Value（"#{spring表达式}"）
+        用法2：@Value（"基本类型值"）
+      注：Value可以在属性前也可以在set前
+      
+ 2.spring mvc
+ (1)spring mvc简介
+  是一个mvc框架，简化基于mvc框架的web应用的开发
+  注：
+    a.不再需要控制器了，spring mvc提供了一个通用的控制器
+    b.可以将java类交给spring容器来管理，方便解耦
+    c.提供了很多有用的jsp标签。
+ (2)五大组件
+   a.DispatcherServlet（前端控制器）
+         接受请求，将请求分发给相应的Controller
+   b.HandlerMapping(控制器，请求派发)
+         告诉DispatcherServlet请求地址
+         与Controller的对应关系
+   c.Controller(二级控制器)
+          负责处理业务逻辑
+   d.ModelAndView
+          封装业务处理结果和视图
+   e.ViewResolver(视图解析器)
+          依据视图名返回真正的页面名称
+     注：
+          请求先发给DispatcherServlet，
+    DispatcherServlet依据HandeMapping的指示，
+          调用对应的Controller来处理，Controller将
+          处理的结果封装成ModelAndView并返回给
+    DispatcherServlet
+    DispatcherServlet调用ViewResolver，
+    ViewResolver依据视图名返回真正的页面
+           的名称给DispatcherServlet
+           最后DispatcherServlet会调用真正的页面（通常是jsp）
+  （3）编程步骤
+  step1：将spring mvc相关的jar文件添加到WEB-INF/lib下
+  step2：添加spring配置文件（spring-mvc.xml）
+  step3：配置DispatcherServlet(web.xml)
+  注：
+  DispatcherServlet的初始方法在执行时会启动spring容器
+  step4：Controller
+  step5：JSP
+  step6：完成springmvc.xml配置
+  
+  练习
+  http://ip:port/springmvc01-exec/toLogin.do
+  显示一个登录页面

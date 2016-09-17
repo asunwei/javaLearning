@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>jQuery操作样式</title>
+    <script src="../js/jquery-1.11.1.js"></script>
+    <style>
+     .big{
+       font-size:30px;
+     }
+      .ipt{
+       color:red;
+      }
+    </style>
+    <script>
+    //页面加载后执行
+     window.onload = function(){
+    	 $("p:eq(1)").addClass("big");
+    	 $("p:eq(1)").addClass("ipt");
+    	 //移除某一个样式
+    	 $("p:eq(0)").removeClass("ipt");
+    	 //移除所有的样式
+    	 $("p:eq(1)").removeClass();
+    	 //切换样式
+    	 //有这个样式就删除
+    	 //没有这个样式就增加
+    	 $("p:eq(1)").toggleClass("ipt");
+    	 $("p:eq(1)").toggleClass("ipt");
+    	 //操作style
+    	 $("p:eq(2)").css("color","blue");
+     }
+    </script>
+  </head>
+  <body>
+  <!-- class属性中可以写多个css
+                  中间用空格隔开，其效果可以叠加。
+   -->
+    <p class="big ipt">jQuery可以灵活的操作样式</p>
+    <p>不但可以设置元素的class属性</p>
+    <p style="color:red;">还可以设置元素的style属性</p>
+    
+  </body>
+</html>

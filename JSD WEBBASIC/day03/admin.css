@@ -1,0 +1,219 @@
+/*1.先对页面做整体的设置*/
+/*清除所有元素的内外边距   即内外边距设置为0*/
+/* *是通用选择器，可以选择所有的元素*/
+*{
+	padding:0;
+	margin:0;
+}
+/*统一设置页面上的字体*/
+body{
+  font-family:"微软雅黑","文泉驿正黑","黑体";
+}
+
+/*2.分区:设置边框、宽高*/
+/*统一设置所有div的边框，便于调试*/
+div{
+  border:1px solid #000;
+  /*都水平居中*/
+  margin:0 auto;
+}
+/*依次设置logo区、导航区、核心区、版权区的宽高*/
+#logo{
+  width:960px;
+  height:61px;
+}
+#nav{
+  width:100%;
+  height:91px;
+}
+#main{
+  width:100%;
+  height:410px;
+}
+#copy{
+  width:960px;
+  height:50px;
+}
+/*设置核心区顶部内边距，预留出渐变条的位置*/
+#main{
+   padding-top:10px;
+}
+/*设置内容区的宽高*/
+#content{
+  width:950px;
+  height:390px;
+  border:5px solid #8ac1db;
+}
+/*设置按钮区、数据区、分页区的宽高*/
+#btn,#data,#page{
+   width:910px;
+}
+#btn,#page{
+  height:40px;
+}
+
+#data{
+ height:310px;
+}
+
+/*3.设置页面的背景*/
+body{
+  background-color:#0ea8d8;
+}
+#logo{
+  background-image:url("../img/top_bg.png");
+}
+#nav{
+  background-color:#0488BB;
+}
+#main{
+  background:url("../img/content_bg.png") repeat-x top;
+}
+#content{
+  background-color:#E8F3F8;
+}
+
+/*4.设置logo区和版权区的文字样式*/
+#logo{
+	text-align:right;
+	/*padding-right:40px;*/
+}
+#logo a{
+  margin-right:40px;
+  line-height:61px;
+  color:#fff;
+  text-decoration:none;
+}
+#logo a:hover{
+  font-weight:bold;
+}
+#copy p{
+color:#fff;
+text-align:center;
+/*border:1px solid red;*/
+height:25px;
+}
+/*5.设置表格样式*/
+#data table{
+  width:100%;
+  border:1px solid #ccc;
+  border-collapse:collapse;
+}
+#data table td{
+  border:1px solid #ccc;
+}
+#data table thead tr{
+  background-color:#fbedce;
+  height:40px;
+}
+#data table tbody tr{
+  background-color:#fff;
+  height:32px;
+}
+/*所有单元格文本居中*/
+#data table td{
+text-align:center;
+}
+/*首行单元格文本加粗*/
+#data table thead td{
+ font-weight:bold;
+}
+/*悬停在数据行上的背景色加深*/
+#data table tbody tr:hover{
+ background-color:#f7f9fd;
+}
+
+/*设置修改按钮*/
+#data table .update{
+ padding-left:15px;
+ background:url("../img/modification.png") no-repeat left;
+ border:0;
+}
+#data table .delet
+padding-left:15px;
+background:url("../img/delete.png") no-repeat left;
+border:0;
+}
+/*6.定位logo、提示框*/
+#logo img{
+	float:left;
+}
+#content{
+	/*只写position不写偏移量，仅仅是为了便于子元素做绝对定位*/
+  position:relative;
+}
+#content #message{
+  position:absolute;
+  left:250px;
+  top:100px;
+  width:400px;
+  height:60px;
+  padding:10px 10px 10px 40px;
+}
+#content #message img{
+  float:right;
+}
+#content #message p{
+	/*通过设行高文本文字垂直居中*/
+  line-height:60px;
+}
+
+/*设置背景色和背景图*/
+#content #message{
+	/*第四个属性可以写left/top/right/bottom
+	也可以写坐标值，写坐标先写left再写top
+	left坐标：背景图具体left尺寸
+	top坐标：背景图距离top的尺寸
+	*/
+  background:#FDECEC url("../img/ok.png") no-repeat 10px;
+}
+
+
+#cotent #message{
+ border:1px solid #f68a8a;
+}
+
+#content #message img:hover{
+  /*鼠标悬停x上的时候变为手型，
+  表示这元素可以点击*/
+  cursor:pointer;
+}
+/*7.设置功能区的样式*/
+#nav ul{
+  border:1px solid red;
+  width:960px;
+  margin:0 auto;
+  list-style-type:none;
+}
+#nav li{
+  border:1px solid yellow;
+  width:66px;
+  height:77px;
+  margin:7px 14px;
+  float:left
+ }
+ #nav li:hover{
+ cursor:pointer;
+ }
+ #nav #i1{
+ background-image:url("../img/index_out.png");
+ }
+ #nav #i1:hover{
+ background-image:url("../img/index_on.png")
+ }
+ #nav #i2{
+ background-image:url("../img/role_out.png");
+ }
+ #nav #i2:hover{
+ background-image:url("../img/role_on.png")
+ }
+ /*收尾 去掉不需要的边框*/
+/* #nav ul{
+   border:0;
+ }
+ #nav li{
+   border:0;
+ }
+ div{
+   border:0;
+ }*/

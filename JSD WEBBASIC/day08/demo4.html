@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>联动菜单</title>
+    <script>
+    	 //数据应该在页面加载后查询出来
+    	 var cities=[
+    		 ["杭州","宁波","温州"],
+    		 ["南京","无锡","苏州"],
+    		 ["济南","青岛","烟台"]
+    		 ];
+    	 //select.value这个属性用来获取下拉选的值
+    	 //1.若option没有value属性,则返回选中的option的内容
+    	 //2.若option有value属性,则返回选中的option的value值
+     function set_city(){
+    	 //获取省
+    	 var sel1 = document.getElementById("province");
+    	 //获取省的序号 
+    	 var pindex = sel1.value;
+    	 //获取省对应的市
+    	 var pcities = cities[pindex-1]; 
+    	 //删除原有的市
+    	 var sel2 = document.getElementById("city");
+    	 sel2.innerHTML = "<option>请选择</option>";
+    	// var options = sel2.children;
+    	 //for(var i=options.length-1;i>0;i--){
+    		// options[i].remove();
+    	 //}
+    	 //添加新城市
+    	 for(var i=0;i<pcities.length;i++){
+    		 var name = pcities[i];
+    		 var option=document.createElement("option");
+    		 option.innerHTML = name;
+    		 sel2.appendChild(option);
+    	 }
+     }
+    </script>
+  </head>
+  <body>
+  <!-- onchage是值改变事件，只有当值发生变化的时才会触发 -->
+    省：
+    <select id="province" onchange="set_city();">
+      <option value="0">请选择</option>
+      <option value="1">浙江省</option>
+      <option value="2">江苏省</option>
+      <option value="3">山东省</option>
+    </select>
+   市：
+   <select id="city">
+     <option>请选择</option>
+   </select>
+  </body>
+</html>

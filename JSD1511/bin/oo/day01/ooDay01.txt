@@ -1,0 +1,485 @@
+回顾:
+1.方法:
+    封装特定的逻辑功能
+    尽可能独立，只干一件事
+    被反复调用，结构清晰，减少代码重复
+    便于合作开发，便于维护
+2.方法的定义:
+    修饰词 返回值类型 方法名(参数列表){
+      方法体
+    }
+3.方法的调用:
+    无返回值: 方法名(有参传参);
+    有返回值: 数据类型 a = 方法名(有参传参);
+              方法名(有参传参);---一般不用
+4.return:
+  1)return; //结束方法的执行
+  2)return 值; //结束方法的执行 返回结果给调用方法
+
+
+a(){
+  存钱
+}
+b(){
+  取钱
+}
+c(){
+  转帐
+}
+
+张三----调a()/b()/c()
+李四----调a()
+王五----调b()
+
+
+public static int[] generateArray(int len,int max){
+  int[] arr = new int[len];
+  for(int i=0;i<arr.length;i++){
+    arr[i] = (int)(Math.random()*max);
+  }
+  return arr;
+}
+
+
+
+
+笔记:
+1.什么是类？什么是对象？
+  1)现实世界是由很多很多对象组成的
+    基于对象抽出了类
+  2)对象:真实存在的单个的个体
+    类:类型、类别，代表一类个体
+  3)类中可以包含:
+    3.1)所有对象所共有的属性/特征---变量
+    3.2)所有对象所共有的行为--------方法
+  4)一个类可以创建多个对象
+    同一个类的多个对象，结构相同，数据不同
+  5)类是对象的模板，对象是类的具体的实例
+2.如何创建类？如何创建对象？
+3.引用类型之间画等号:指向同一个对象
+  1)对其中一个引用的修改会影响另外一个
+    原因:对象只有一份
+    eg:房子钥匙(一个对象)
+  基本类型之间画等号:赋值
+  1)对其中一个变量的修改不会影响另外一个
+    原因:数据有两份
+    eg:身份证复印件(两份身份证)
+4.null:
+  1)空，不指向任何对象
+  2)对null值做任何操作都是不合理的，
+    报空指针异常(NullPointerException)
+
+
+
+任务:
+1.引用画等号与null的练习
+2.经典案例+课后作业+每日一练
+
+当日事当日毕
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+房子:对象
+钥匙:引用
+配一把钥匙:引用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+类型 引用   对象
+Cell c    = new Cell();
+
+
+
+public static void main(String[] args){
+  int a = 5;
+  test(a); //int num=5;
+}
+public static void test(int num){
+}
+
+
+
+
+
+
+
+
+
+
+    基本类型变量(变量)
+int a = 5;
+        引用类型变量(引用)
+Student zs = new Student();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          引用
+数据类型  引用类型变量   =  对象
+Student   zs             =  new Student();
+
+
+
+
+
+
+new Student();
+new Student();
+new Student();
+
+
+
+Student zs = new Student();
+zs.name = "zhangsan";
+zs.age = 25;
+
+
+
+
+
+
+
+
+
+
+1)找对象:一个一个一个的小格子
+2)抽类:Cell
+3)设计类中的成员变量和方法
+4)创建对象并测试
+
+
+
+
+CellTest
+
+class Cell{ //格子类
+  int row; //行号
+  int col; //列号
+
+  void drop(){ //下落一格
+    row++;
+  }
+  void moveLeft(int n){ //左移n格
+    col-=n;
+  }
+  String getCellInfo(){ //获取行号和列号
+    return row+","+col;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+讲6天
+  前4天的经典案例
+
+
+
+int[] arr = new int[5]; //0,0,0,0,0
+Student ww = new Student();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+oo.day01
+
+
+
+
+类           对象
+月饼模子     月饼
+
+
+
+
+
+
+
+
+
+
+
+
+Student zs = new Student();
+Student ls = new Student();
+Student ww = new Student();
+
+
+Student zs = new Student(); //创建Student对象
+zs.name = "zhangsan";
+zs.age = 25;
+zs.address = "河北廊坊";
+zs.className = "JSD1511";
+zs.eat();
+zs.sleep();
+zs.study();
+zs.abc = 123; //编译错误
+
+Student ls = new Student();
+ls.name = "lisi";
+ls.age = 26;
+ls.address = "黑龙江佳木斯";
+ls.className = "JSD1511";
+ls.eat();
+ls.sleep();
+ls.study();
+ls.bbb = 5; //编译错误
+
+StudentTest
+
+class Student{
+  String name;
+  int age;
+  String address;
+  String className;
+  void eat(){}
+  void sleep(){}
+  void study(){}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+class Teacher{
+  String name;
+  int age;
+  String address;
+  double salary;
+  void eat(){}
+  void sleep(){}
+  void teach(){}
+}
+class Dog{
+  String name;
+  int age;
+  String color;
+  String type;
+  void run(){}
+  void fei(){}
+}
+class Car{
+  String type;
+  double price;
+  String color;
+  void run(){}
+  void back(){}
+  void stop(){}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+对象      类
+我        老师
+小盼      
+小梅      
+
+
+张三      学生
+李四
+王五
+
+
+
+小黑      狗
+小白
+小强
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+面向过程的缺陷:
+1.缺乏对数据的封装
+2.数据和方法(操作数据的)的分离
+
+
+面向对象
+
+class Emp{ //自造的数据类型
+  String name;
+  int age;
+  double salary;
+  void print(){
+    System.out.println("姓名:"+name);
+    System.out.println("年龄:"+age);
+    System.out.println("工资:"+salary);
+  }
+}
+
+class Test{ //测试类
+  public static void main(String[] args){
+    Emp e = new Emp(); //创建一个对象
+    e.name="zhangsan";
+    e.age=25;
+    e.salary=5000;
+    e.print();
+  }
+}
+
+
+
+
+面向过程:数据+方法
+面向对象:类(包含数据+方法)
+
+
+
+
+
+
+
+
+
+数据类型
+  基本类型，数组类型
+
+自己创建一种数据类型
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+面向对象OO
+
+java开发程序员
+
+2年挣2万的
+5年挣2万的
+
+2年挣3.5的
+
+能力
+
+
+System.out.println("helloWorld");
+
+
+代码:
+  复用性好、扩展性好、维护性好、
+  可移植性好、健壮性好....
+
+
+语法基础:固定
+1)画一个圆形
+2)去银行取钱
+
+面向对象:因抽象而难
+1)画一个图形
+2)向着社会主义发展
+
+
+晕乎乎的-------正常的
+
+不晕:
+1.什么也不懂
+2.自以为不晕----------非常好非常好
+
+晕着晕着就不晕了
+
+切忌纠结
+
+特点:需要时间的积累
+
+
+
+
+
+
+
+
+
+
+
+
+

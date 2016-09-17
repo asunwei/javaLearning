@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>window的方法</title>
+    <script>
+    //1.提示框：弹出框、确认框、反馈框
+    //1.1弹出提示没有返回值
+//    alert("您好！")
+  //1.2.弹出提示让用户选择，若选择是，则返回true，否则返回false
+  //  var b = confirm("你吃了吗？")
+    //alert(b);
+    //1.3.反馈框：弹出提示，让用户反馈（输入)，返回的值就是用户输入的内容
+    //参数1：提示信息
+    //参数2：框内默认值
+   // var t = prompt("请告知","你吃的什么？");
+    //alert(t);
+    //2.定时器：周期性、一次性
+    //2.1.周期性定时器：每隔n毫秒，执行一次function
+    //启动定时器，每一秒执行一次函数，返回值是启动定时器的id
+    var a = 0;
+    var id1 = setInterval(function(){
+    	console.log(a++);
+    	if(a==5){
+    	//通过id来停止定时器
+    		clearInterval(id1);
+    	}
+    },1000);
+    //2.2：一次性定时器
+    //延迟n毫秒执行一次function.
+    //启动定时器，延迟2s执行function,返回的是该定时器的id
+    var id2 = setTimeout(function(){
+    	console.log("你好！");
+    },2000);
+    //一次性定时器的id也是用来停止它的
+    //它在执行一次之后会自动停止，但是我们可以在其未执行前（延迟时间范围内）主动停止。
+       clearTimeout(id2);
+    
+    //启动定时器，相当于启动一个线程，因此js会继续向下执行，不会等待定时器
+    //中的function执行完毕，再向下执行
+    </script>
+  </head>
+  <body>
+    <p>window对象有很多方法</p>
+    <p>window对象有很多属性</p>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="spring-netctoss"
+  id="myeclipse.1456995796380"
+  context-root="/spring-netctoss"
+  j2ee-spec="5.0"
+  archive="spring-netctoss.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

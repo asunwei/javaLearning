@@ -1,0 +1,56 @@
+1.项目准备
+ 1）创建Web项目
+ 2）导入Jar包
+   A.jdbc(1)
+   B.dbcp(3)
+   C.JSTL(2)
+ 3）创建各级目录
+ src  
+   entity
+   dao
+   util
+   web
+   WebRoot
+     images(图片)
+     styles(CSS)
+     WEB-INF
+       cost（资费模块的JSP）
+  *规则：静态资源放在WebRoot下
+        JSP放在WEB-INF下
+        
+ 2.servlet路径规范
+ 1）资费模块
+ 查询：/netctoss/findCost.do
+ 增加：/netctoss/toAddCost.do
+ 增加保存：/netctoss/addCost.do
+ 修改：/netctoss/toUpdateCost
+ 3.JSP存储位置
+ 1）资费模块
+ 查询：/WEB—INF/cost/find_cost.jsp
+增加：/WEB—INF/cost/add_cost.jsp
+ 
+ 补充：
+1.WEB-INF
+  1）作用
+     放在此文件夹内的资源不能直接访问，
+     必须通过转发的形式访问，它可以保护资源。
+  2）通常JSP放在此处
+    a.如果JSP不放在此处，而是直接放在WebRoot下，
+          则它可以被直接访问。
+    b.由于我们采用Model2的模式开发，JSP的数据
+          都来源于Servlet，若直接访问它就会丧失这些
+          数据，导致报错。
+    c.如果将JSP放在此处，则JSP无法直接访问了，
+          就可以强制用户按照MVC的规则来访问它，
+          从而避免了这种BUG。
+  3）静态资源不放在此处
+    a.因为静态资源必须直接访问，不存在转发
+          访问的形式，所以不能被保护。
+    b.直接将静态资源放在WebRoot下。
+2.访问路径
+  1）Servlet
+      在web.xml中声明的网名。
+    /netctoss/findCost.do
+  2）其他(HTML/CSS/JS/img/jsp)
+      是该资源在Tomcat中部署的位置。  
+    /netctoss/images/logo.png

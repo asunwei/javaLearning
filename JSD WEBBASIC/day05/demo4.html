@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>js基础语法</title>
+    <script>
+      //直接写js，并不封装函数，浏览器在加载页面时自动执行js
+      //因为HTML/CSS/JS浏览器都是解释（从上到下逐行执行）执行的，所以次JS会在body加载前执行
+      //即body内容没有显示前，此js已经执行了
+      console.log("1.声明变量-------------");
+      var a;//undifinded
+      console.log(a);
+      var b=2;
+      console.log(b);
+      var c=null;
+      console.log(c);
+      
+      console.log("2.数据类型--------------");
+      var s="abc";
+      var b=true;
+      var n=3.14;
+      console.log(s);
+      console.log(b);
+      console.log(n);
+      
+      console.log("3.隐式转换-------------");
+      console.log(s+b);
+      console.log(s+n);
+      console.log(n+b);
+      console.log(b+b);
+      
+      console.log("4.强制转换---------------");
+      //用js可以从页面获取数据，其类型默认都是字符串
+      //如果直接相加就回按照字符串拼接相加
+      //如果向按照数字相加则需要转型
+      var m="3.14";
+      var n="1";
+      console.log(m+n);
+      console.log(parseFloat(m)+parseInt(n));
+      var k = 6;
+      console.log(k);
+      console.log(typeof(k));
+      
+      //如何出现NaN(Not a Number)
+      console.log(parseInt("abc"));
+      //判断数据是不是NaN
+      console.log(isNaN("abc"));
+      console.log(isNaN("3.14"));
+      console.log("5.运算符-----------------------");
+      console.log(5/2);
+      var x=9;
+      var y="9";
+      console.log(x==y);
+      console.log(x===y);
+      
+      console.log("6：表达式--------------------");
+      var p=NaN;
+      //一切标示空号的都是等价于false
+      //0/""/undifined/NaN/null
+      console.log(p?1:0);
+      //一切非空的值都是true
+      var q="abc";
+      console.log(q?1:0);
+      //特殊用法
+      if(q=="abc"){
+    	  console.log("ok");
+      }
+      q=="abc"?console.log("ok"):"";
+      q=="abc"&&console.log("ok");
+    </script>
+  </head>
+  <body>
+    <h1>js挺好</h1>
+  </body>
+</html>

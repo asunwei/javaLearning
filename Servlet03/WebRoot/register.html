@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>注册</title>
+  </head>
+  <body>
+  <!-- 1.需要在表单元素上，通过action属性设置表单提交的目标（servlet网名）
+  servlet访问路径（网名）：
+  a.绝对路径
+    /projectName/ServletPath
+    /Servlet03/register
+  b.相对路径:
+          目标资源和相对于当前资源的路径
+          当前：/Servlet03/register.html
+          目标：/Servlet03/register
+          相对：前面一样的目录可以去掉
+          register
+   -->
+  
+    <form action="register" method="post">
+    <!-- 
+    2.表单控件需命名后才能提交
+           文本框，密码框，文本域等，表单提交的是内部输入的值
+     -->
+    <P>
+     帐号：<input type="text" name="userName"/>
+    </P>
+    <p>
+    密码：<input type="password" name="pwd"/>
+    </p>
+    <!-- 
+    单选，多选默认表单提交的是"checked"
+    需要给他们分别设置value属性，这是
+    表单就会提交选中的框的value属性值
+     -->
+    <p>
+    性别：
+    <input type="radio" name="sex" value="male"/>男
+    <input type="radio" name="sex" value="female"/>女
+    </p>
+    <p>
+    兴趣：
+    <input type="checkbox" name="loves" value="basketball"/>篮球
+    <input type="checkbox" name="loves" value="football"/>足球
+    <input type="checkbox" name="loves" value="tableball"/>桌球
+    </p>
+    <p>
+    <input type="submit" value="注册"/>
+    </p>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>模版</title>
+  </head>
+  <body>
+    <!-- 标题 (h#)-->    
+    <h1>苍老师</h1>
+    <h2>范老师</h2>
+    <h3>王克晶</h3>
+    <!-- 段落(P) -->
+    Hello,苍老师
+    Hello,范老师
+    Hello,王克晶
+    <p>范传奇暗恋王克晶</p>
+    <p><a href="#a1">苍老师</a>吃醋</p>
+    <!-- 有序列表 -->
+    <ol>
+      <li>浙江省</li>
+      <li>江苏省</li>
+      <li>山东省</li>
+    </ol>
+    <!-- 无序列表 -->
+    <ul>
+      <li>北京</li>
+      <li>上海</li>
+      <li>广州</li>
+    </ul>
+    <!-- 嵌套列表 -->
+    <ol>
+      <li>安徽省</li>
+        <ul>
+          <li>合肥</li>
+          <li>芜湖</li>
+          <li>滁州</li>
+        </ul>
+      <li>江苏省</li>
+        <ul>
+        <li>南京</li>
+        <li>苏州</li>
+        <li>无锡</li>
+        </ul>
+    </ol>
+    <!-- 行内元素 -->
+    <p>
+               北京市<i>海淀区</i><b>北三环</b>西路<u>甲18号</u><b><span style="color:red;">中鼎大厦</span></b>B8
+    </p>
+    <!-- 空格折叠 -->
+    <p>
+                那是一个&nbsp;&nbsp;&nbsp;秋天，<br/>
+                看着传奇&nbsp;&nbsp;&nbsp;跑偏，<br/>
+               奔着克晶&nbsp;&nbsp;&nbsp;而去，<br/>
+               误入老苍&nbsp;&nbsp;&nbsp;心间。<br/>
+    </p>
+    <!-- 
+             图片：
+                    绝对路径：直接写图片存储的完整路径    d/image/pig.jpg
+                    相对路径：
+          a.平级：图片和HTML在一个目录下  直接写图片名
+          b.下级：图片在HTML的下级目录内   下级目录/图片名
+          c.上级：图片在HTML的上级目录内  ../图片名
+     -->
+    <p>
+        <img src="01.jpg"/>
+        <img  src="a/02.jpg"/>
+        <img/src="../03.jpg" width="300px"/>
+        <img src="../images/04.jpg">
+    </p>
+    <!-- 超链接 -->
+    <p>
+       <a href="http://tmooc.cn" target="_blank">达内TMOOC</a>
+    </p>
+    <!-- 锚点 -->
+    <p>
+       <a name="a1" >苍老师是xxxxx</a>
+    </p>
+    <!-- 表格 -->
+    <!--
+                     表格的边框，宽，高等样式
+        1.通过元素的属性实现
+        *2.通过css实现  
+     -->
+    <table border="1px" cellspacing="0">
+        <!-- 第一行 -->
+        <tr>
+          <!-- 第一行第一列 -->
+          <td>苍老师</td>
+          <!-- 第一行第二列 -->
+          <td>范老师</td>
+        </tr>
+        <!-- 第二行 -->
+        <tr>
+        <!-- 第二行第一列 -->
+          <td>王老师</td>
+          <!-- 第二行第二列 -->
+          <td>程老师</td>
+        </tr>
+    </table>
+    <br/>
+    <table border="1px" cellspacing="0">
+         <tr>
+            <!-- 2.跨两列 -->
+            <td colspan="2" align="center">苍老师</td>
+            <!-- 1.删除被跨的目标 -->
+            <!-- <td>范老师</td>-->
+         </tr>
+         <tr>
+           <td>王老师</td>
+           <td>程老师</td>
+         </tr>
+    </table>
+    <br/>
+    <table border="1px" cellspacing="0">
+        <tr>
+           <!-- 2.跨两行 -->
+           <td rowspan="2" >苍老师</td>
+           <td>范老师</td>
+        </tr>
+        <tr>
+           <!-- 1.删除被跨行的目标 -->
+           <!-- <td>王老师</td> -->
+           <td>程老师</td>
+        </tr>
+    </table>
+    <br/>
+    <!-- 行分组 -->
+    <table border="1px" cellspacing="0">
+    <thead>
+       <tr>
+         <td>名称</td>
+         <td>单价</td>
+         <td>数量</td>
+         <td>金额</td>
+       </tr>
+    </thead>
+    <tbody style="color:red;">
+       <tr>
+         <td>鼠标</td>
+         <td>20</td>
+         <td>2</td>
+         <td>40</td>
+       </tr>
+       <tr>
+         <td>键盘</td>
+         <td>100</td>
+         <td>2</td>
+         <td>200</td>
+       </tr>
+       <tr>
+         <td>耳机</td>
+         <td>100</td>
+         <td>2</td>
+         <td>200</td>
+       </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="3" align="center">总计</td>
+      <td>440</td>
+    </tr>
+    </tfoot>
+    
+    </table>
+    
+  </body>
+</html>

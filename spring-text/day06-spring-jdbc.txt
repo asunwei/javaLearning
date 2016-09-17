@@ -1,0 +1,19 @@
+spring mvc
+>是spring带来的现成的组件，简化了web编程，加快web开发速度
+
+spring异常处理
+> 界面->WEB->Spring MVC控制器（DispacherServlet）->二级控制器->业务层—>DAO
+500 就是web层异常处理结果！
+
+spring JDBC
+1.导入spring JDBC 相关的jar包
+ -JDBC 驱动
+ -JDBC 连接池
+ -Spring JDBC 包
+2.利用配置文件创建，连接池对象
+ -设置数据库连接参数
+ -连接池策略管理参数
+3.利用配置文件创建jdbcTemlate对象
+ —注入连接池对象
+4.利用@Resource注解，在DAO中注入jdbcTemplate对象
+5.在DAO中调用jdbcTemolate 对象的CRUD方法（增删改查）
