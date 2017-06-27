@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="springDSN"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName"
+            value="com.mysql.jdbc.Driver">
+        </property>
+        <property name="url"
+            value="jdbc:mysql://localhost:3306/testgrp">
+        </property>
+        <property name="username" value="root"></property>
+        <property name="password" value="aroot"></property>
+    </bean>
+
+    <bean id="jdbcTemplate"
+        class="org.springframework.jdbc.core.JdbcTemplate" abstract="false"
+        lazy-init="false" autowire="default" dependency-check="default">
+        <property name="dataSource">
+            <ref bean="springDSN" />
+        </property>
+    </bean>
+    
+    <bean id="blogsDao" class="com.learn.java.springjdbc.BlogsDaoImpl">
+       <property name="jdbcT">
+          <ref bean="jdbcTemplate" />
+       </property>
+    </bean>
+    
+    <bean id="namedJdbcTemplate" lazy-init="true"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg index="0" ref="springDSN" />
+	</bean>
+
+	<bean id="sql" class="java.lang.String">
+		<constructor-arg index="0">
+			<value>
+				select * FROM blog_user
+				 WHERE user_number = :number
+				   AND user_name = :name
+				   AND user_password = :password
+				   AND user_email = :email;
+			</value>
+		</constructor-arg>
+	</bean>
+	<bean id="blogsDao2" class="com.learn.java.springjdbc.BlogsDaoImpl2">
+	 <property name="namedJdbcTemplate">
+            <ref bean="namedJdbcTemplate" />
+        </property>
+        <property name="sql">
+            <ref bean="sql" />
+        </property>
+    </bean> 
+    
+</beans>
